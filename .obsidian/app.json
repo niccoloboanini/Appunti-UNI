@@ -1,0 +1,25 @@
+{
+  "legacyEditor": false,
+  "livePreview": true,
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 90
+  },
+  "communityPluginSortOrder": "download",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "newFileLocation": "current",
+  "newFileFolderPath": "SEGNALI/immagini",
+  "attachmentFolderPath": "SEGNALI/immagini",
+  "useMarkdownLinks": false,
+  "spellcheckDictionary": [
+    "cfr",
+    "rect",
+    "antitrasformata",
+    "\n",
+    "periodicizzazione",
+    "quantizzatore"
+  ]
+}

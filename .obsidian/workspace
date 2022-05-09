@@ -1,0 +1,111 @@
+{
+  "main": {
+    "id": "b76cf7cced42c44b",
+    "type": "split",
+    "children": [
+      {
+        "id": "b42ef4f72727c896",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "SEGNALI/appunti/5. 5 maggio.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7ff9c23050cf6842",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a9bd3613128332b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7213e05fcfed28f4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b5a20381dde658a8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1b1007af81daf73f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 186.5
+  },
+  "right": {
+    "id": "f84c341bdd731090",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc62480ec53f0606",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c014d7467544beb3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "SEGNALI/appunti/5. 5 maggio.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "b42ef4f72727c896",
+  "lastOpenFiles": [
+    "SEGNALI/appunti/5. 5 maggio.md",
+    "SEGNALI/appunti/2. 2 e 5 maggio.md",
+    "SEGNALI/appunti/1. 28 aprile.md",
+    "SEGNALI/appunti/0..md",
+    "SEGNALI/appunti/4. 5 maggio.md",
+    "SEGNALI/appunti/3. 5 maggio.md",
+    "SEGNALI/pdf/2. 2 Maggio.pdf",
+    "SEGNALI/appunti/prova.md",
+    "SEGNALI/immagini/ciao.png",
+    "SEGNALI/immagini/Pasted image 20220505201426.png"
+  ]
+}
