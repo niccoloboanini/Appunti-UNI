@@ -33,5 +33,12 @@ Può capitare che (è per questi casi che facciamo l'esercizio) $SNR_{out} \neq 
 Pertanto in uscita avremo i campioni di segnale "utile", cioè $x[n]$ e ognuno di esso è affetto dal campionamento del segnale $r[t]$ e l'errore di quantizzazione $e[n]$
 Quindi, ricordando che sarà il quantizzatore ad aggiungere (ulteriore) rumore:
 $$
-x(t)+r(t)\overbrace{\longrightarrow}^{\text{campionamento}} x[n]+r[n] 
+x(t)+r(t)\overbrace{\longrightarrow}^{\text{campionamento}} x[n]+r[n] \overbrace{\longrightarrow}^{\text{quantizzatore}} \underbrace{x[n]+\overbrace{r[n]+e[n]}}^{\quad \quad\text{da rimuovere}}_{\text{uscita}}
 $$
+Pertanto:
+$$
+\boxed{SNR_{out}=\frac{P_{x}}{P_{r}+P_e}}
+$$
+- Nota: le potenze si sommano perché la somma delle potenze è uguale alla potenza della somma, perché l'errore di quantizzazione è *incorrelato* col segnale d'ingresso per ipotesi. DIM (05/04 - h1, m.59):
+-  ![[Pasted image 20220515160522.png|300]]
+
