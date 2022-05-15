@@ -42,3 +42,4 @@ $$
 - Nota: le potenze si sommano perché la somma delle potenze è uguale alla potenza della somma, perché l'errore di quantizzazione è *incorrelato* col segnale d'ingresso per ipotesi. DIM (05/04 - h1, m.59):
 -  ![[Pasted image 20220515160522.png|300]]
 
+Supponendo (come faremo sempre) $D_{s}=(-1,1)$, dobbiamo all'occorrenza inserire un *guadagno* in ingresso al quantizzatore stesso per adattare la dinamica:
