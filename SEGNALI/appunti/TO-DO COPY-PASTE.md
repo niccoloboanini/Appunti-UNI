@@ -70,5 +70,8 @@ $$
 
 Pertanto (per comodità si calcola l'inverso):
 $$
-\frac{1}{SNR_{out}}= \frac{P_{r'}+P_e}{P_{x'}} = \frac{P_{r'}}{P_{x'}} + \frac{P_e}{P_{x'}} = \frac{1}{\underbrace{SNR_{i}}_{30dB}} + \frac{P_e}{P_{x'}} $$
-Quindi:
+\frac{1}{SNR_{out}}= \frac{P_{r'}+P_e}{P_{x'}} = \frac{P_{r'}}{P_{x'}} + \frac{P_e}{P_{x'}} = \frac{1}{\underbrace{SNR_{i}}_{30dB \rightarrow 10^3}} + \frac{\overbrace{P_e}^{2^{-2B}/{3}}}{\underbrace{P_{x'}}}_{1/16} $$
+Quindi (ricordando che $B = 9$):
+$$
+SNR_{out} = 29.91 dB \quad \quad \text{(in lineare: } 980.03 \text{)} 
+$$
