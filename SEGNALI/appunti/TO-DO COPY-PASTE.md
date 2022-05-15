@@ -49,3 +49,26 @@ Dove:
 - $x'[n]$, $r'[n]$,$e[n]$ sono i segnali sopo la quantizzazione 
 ![[Pasted image 20220515163456.png|500]]
 
+Ci chiediamo ora se $SNR$ è variato dopo il guadagno, ovvero: $SNR' \neq SNR \ ?$
+$$
+SNR'=\frac{E[(x'(t))^2]}{E[r'(t)^2]}=\frac{E[(G\cdot x(t))^{2}]}{E[(G\cdot r(t))^{2}]} \underbrace{=}_{G\text{ costante}} = \frac{\cancel G^2 \ E[x^2(t)]}{\cancel G^2 \ E[r^2(t)]}
+$$
+- E come si nota quindi, il guadagno $G$ (utilizzando un amplificatore ideale) non altera $SNR$ , pertanto:
+$$
+SNR = SNR' \quad \quad \text{utilizzando un filtro ideale}
+$$
+
+Calcoliamo ora per comodità anche la potenza del segnale $x'$, quindi dopo il guadagno (nelle stesse ipotesi):
+$$
+P_{x'} = E[x'(t)^{2}] = E[ G^2 \ x^2(t) ] = E\left[\left(\frac{1}{4\sigma x}\right)^2 \cdot x^2(t)\right] = \frac{1}{16\sigma x^2} \cdot E[\underbrace{x^2(t)}_{\sigma x^2}] = \frac{1}{16} 
+$$
+
+*Andiamo adesso a calcolare $SNR_{out}$* (nota: il segnale è già stato quantizzato quindi si utilizza $x'$):
+$$
+SNR_{out} = \frac{Px'}{Pr' + P_{e}}, \quad \quad P_{e}=\frac{\Delta^2}{12} = \frac{(\frac{2}{2B})^2}{12} = \frac{4 \cdot 2^{-2B}}{12} = \frac{2^{-2B}}{3}
+$$
+
+Pertanto (per comodità si calcola l'inverso):
+$$
+\frac{1}{SNR_{out}}= \frac{P_{r'}+P_e}{P_{x'}} = \frac{P_{r'}}{P_{x'}} + \frac{P_e}{P_{x'}} = \frac{1}{\underbrace{SNR_{i}}_{30dB}} + \frac{P_e}{P_{x'}} $$
+Quindi:
