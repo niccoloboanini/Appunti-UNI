@@ -20,4 +20,5 @@ $$
 - Che è la formula *generale* con la possibilità di "scegliere" la dinamica del segnale e il tipo di segnale a seconda del caso
 	- Nella pratica quindi si sostituiscono le informazioni del segnale che conosciamo all'interno della formula
 
->> Spesso il $SNR$ viene espresso in $d_{B}$ , da cui si ottiene: $$SNR = 10 \log_{10} (SNR) = 10 \log_{10} 2^{2B} + 10 \log_{10} \frac{12 S}{D^{2}}= 2B $$
+>> Spesso il $SNR$ viene espresso in $d_{B}$ , da cui si ottiene: $$SNR = 10 \log_{10} (SNR) = 10 \log_{10} 2^{2B} + 10 \log_{10} \frac{12 S}{D^{2}}= 2B \cdot \log_{10}2 + 10 \log_{10} \frac{12 S}{D^{2}}$$
+>> Da cui finalmente: $$ 6.02B + 10 \log_{10}\frac{12S}{D^{2}} $$
