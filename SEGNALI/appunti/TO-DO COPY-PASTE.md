@@ -48,3 +48,4 @@ Dove:
 - $x'(t)$ e $r'(t)$ sono i segnali dopo il guadagno
 - $x'[n]$, $r'[n]$,$e[n]$ sono i segnali sopo la quantizzazione 
 ![[Pasted image 20220515163456.png|500]]
+
