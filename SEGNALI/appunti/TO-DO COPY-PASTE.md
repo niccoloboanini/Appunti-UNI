@@ -13,4 +13,6 @@ I grafici generali relativi alla densità spettrale sono così rappresentabili:
 
 Si utilizza poi un filtro (in blu) per limitare effettivamente la banda (perché idealmente i segnali hanno tutti banda infinita). Esso viene detto *filtro di anti-aliasing* (ideale):
 ![[Pasted image 20220515153926.png|400]]
+>> cfr: "rapporto segnale rumore in ingresso nella banda di interesse" (vuol dire quanto detto sopra)
+
 
