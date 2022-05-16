@@ -29,6 +29,7 @@
     "Fourier",
     "slides",
     "anti-aliasing",
-    "segnale-rumore"
+    "segnale-rumore",
+    "Laplace"
   ]
 }
