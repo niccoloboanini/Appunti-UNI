@@ -31,6 +31,8 @@
     "anti-aliasing",
     "segnale-rumore",
     "Laplace",
-    "dim"
+    "dim",
+    "antitrasformate",
+    "monolatera"
   ]
 }

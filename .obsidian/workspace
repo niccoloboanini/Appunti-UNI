@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "SEGNALI/appunti/6. 12 maggio.md",
+            "file": "SEGNALI/appunti/6. 12 maggio - X.md",
             "mode": "source",
             "source": false
           }
@@ -61,7 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 201.5
+    "width": 221.5
   },
   "right": {
     "id": "f84c341bdd731090",
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SEGNALI/appunti/6. 12 maggio.md",
+                "file": "SEGNALI/appunti/6. 12 maggio - X.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,15 +97,15 @@
   },
   "active": "04f544849d45e911",
   "lastOpenFiles": [
-    "SEGNALI/appunti/6. 12 maggio.md",
+    "SEGNALI/appunti/6. 12 maggio - X.md",
+    "SEGNALI/appunti/TO-DO COPY-PASTE.md",
+    "SEGNALI/pdf/5. 5 maggio.pdf",
+    "README.md",
     "SEGNALI/appunti/Untitled.md",
     "SEGNALI/appunti/5. 5 maggio.md",
-    "SEGNALI/pdf/5. 5 maggio.pdf",
-    "SEGNALI/appunti/TO-DO COPY-PASTE.md",
     "SEGNALI/appunti/3. 5 maggio.md",
     "SEGNALI/appunti/2. 2 e 5 maggio.md",
     "SEGNALI/appunti/1. 28 aprile.md",
-    "SEGNALI/appunti/4. 5 maggio.md",
-    "README.md"
+    "SEGNALI/appunti/4. 5 maggio.md"
   ]
 }

@@ -2,7 +2,7 @@
   "commitMessage": "PC backup: {{date}}",
   "autoCommitMessage": "PC backup: {{date}}",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
-  "autoSaveInterval": 20,
+  "autoSaveInterval": 1,
   "autoPullInterval": 0,
   "autoPullOnBoot": true,
   "disablePush": false,
