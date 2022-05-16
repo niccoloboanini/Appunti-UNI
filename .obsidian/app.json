@@ -30,6 +30,7 @@
     "slides",
     "anti-aliasing",
     "segnale-rumore",
-    "Laplace"
+    "Laplace",
+    "dim"
   ]
 }
