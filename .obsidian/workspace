@@ -7,11 +7,9 @@
         "id": "b42ef4f72727c896",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "pdf",
           "state": {
-            "file": "SEGNALI/appunti/5. 5 maggio.md",
-            "mode": "source",
-            "source": false
+            "file": "SEGNALI/pdf/0. MERGE.pdf"
           }
         }
       }
@@ -77,7 +75,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SEGNALI/appunti/5. 5 maggio.md",
+                "file": "SEGNALI/pdf/0. MERGE.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +95,7 @@
   },
   "active": "b42ef4f72727c896",
   "lastOpenFiles": [
+    "SEGNALI/pdf/0. MERGE.pdf",
     "SEGNALI/appunti/5. 5 maggio.md",
     "SEGNALI/appunti/TO-DO COPY-PASTE.md",
     "SEGNALI/appunti/4. 5 maggio.md",
@@ -105,7 +104,6 @@
     "SEGNALI/pdf/1. 28 aprile.pdf",
     "Untitled.md",
     "SEGNALI/appunti/3. 5 maggio.md",
-    "SEGNALI/appunti/1. 28 aprile.md",
-    "SEGNALI/pdf/Untitled.md"
+    "SEGNALI/appunti/1. 28 aprile.md"
   ]
 }
