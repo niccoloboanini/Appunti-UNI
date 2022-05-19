@@ -41,6 +41,8 @@
     "Antitrasformiamo",
     "tempo-discreto",
     "ri-adattate",
-    "bibo-stabile"
+    "bibo-stabile",
+    "convoluzione",
+    "convoluto"
   ]
 }
