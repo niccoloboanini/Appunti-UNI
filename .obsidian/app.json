@@ -43,6 +43,7 @@
     "ri-adattate",
     "bibo-stabile",
     "convoluzione",
-    "convoluto"
+    "convoluto",
+    "bibo-stabilità"
   ]
 }
