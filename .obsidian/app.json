@@ -54,6 +54,8 @@
     "processamento",
     "real-time",
     "real-time",
-    "anti-causale"
+    "anti-causale",
+    "hermitiana",
+    "monolatere"
   ]
 }
