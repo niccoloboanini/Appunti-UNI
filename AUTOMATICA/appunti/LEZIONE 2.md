@@ -1,3 +1,13 @@
+# MODELLISTICA E SIMULAZIONE
+
+## MODELLO
+Descrive matematicamente un sistema
+
+### TEMPO DISCRETO (TD)
+Descritti da $\text{equazioni alle differenze}$
+### TEMPO CONTINUO (TD)
+Descritti da $\text{equazioni differenziali}$
+
 
 ### MODELLO SISTEMA SCOLASTICO
 $$
