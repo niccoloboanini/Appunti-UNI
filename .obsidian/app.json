@@ -12,7 +12,7 @@
   "promptDelete": false,
   "newFileLocation": "current",
   "newFileFolderPath": "SEGNALI/immagini",
-  "attachmentFolderPath": "SEGNALI/immagini",
+  "attachmentFolderPath": "./immagini",
   "useMarkdownLinks": false,
   "spellcheckDictionary": [
     "cfr",
@@ -63,6 +63,8 @@
     "monlatera",
     "antitrasformando",
     "similsinc",
-    "plottare"
+    "plottare",
+    "Page",
+    "Rank"
   ]
 }
