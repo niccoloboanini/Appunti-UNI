@@ -105,7 +105,7 @@ $$
 ![[Pasted image 20220527101921.png|600]]
 
 
-## MODELLO DI TRASFERIMENTO DI RISORSE
+# MODELLO DI TRASFERIMENTO DI RISORSE
 Sono rappresentati da una **equazione di bilancio**:
 $$
 x(t+1) = x(t) + f^{\text{in}}(t) + f^{\text{out}}(t)
@@ -126,7 +126,7 @@ $$
 x(t+1) = x(t)+\gamma x(t) + g(t) - s(t)
 $$
 
-### MODELLI COMPARTIMENTALI
+## MODELLI COMPARTIMENTALI
 Usati quando le risorse nei modelli di trasferimento appena descritti hanno *più di uno stadio*, in generale $n$ stadi
 - Un esempio generale può essere quello degli anni accademici della triennale: abbiamo tre compartimenti ciascuno che descrive un anno accademico.
 	- Due stadi sono collegabili tra loro grazie alle transizioni
