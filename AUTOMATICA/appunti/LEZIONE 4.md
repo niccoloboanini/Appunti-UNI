@@ -60,5 +60,23 @@ $$
 #### ESEMPIO
 ![[Pasted image 20220528155905.png|500]]
 
+L'elemento $A_{ij}$ mi dice la probabilità di passare da $j$ a $i$ (si legge al "contrario")
+- Ad esempio $A_{23}$ mi dice la probabilità di passare dallo stato $3$ allo stato $2$.
 
+#### CONVERGENZA E DAMPING FACTOR
+Nel modello che abbiamo presentato *non* è garantita la convergenza. Infatti c'è la possibilità che si finisca in una pagina e che da lì non ci si muova più per com'è fatto il grafico (*nodo assorbente*).
+- Per tale motivo si introduce il **Damping factor ($d$)** che garantisce che anche se giungiamo su un nodo assorbente, si passa comunque a un altro nodo (pagina), scegliendo se necessario quest'ultimo in modo casuale.
+- Questo garantisce la convergenza, ovvero esiste sempre una possibilità di essere in una determinata pagina $i$ dopo un certo periodo di tempo sufficiente, in generale: $$ \lim_{t \to \infty} x_{i}(t) = \overline x_{i}  $$
 
+In particolare, con probabilità $d$ si sceglie uno dei link possibili (come sempre - camminata casuale) e con probabilità $1-d$ si sceglie una pagina a caso invece di seguire i link, pertanto:
+$$
+x_{i}(t+1) = \underbrace{d \sum_{n \in N_i}^{} \frac{x_j(t)}{L_{j}}}_{\text{pagina linkata}}+\underbrace{(1-d)\sum_{j=1}^{n} \frac{x_j(t)}{n}}_{\text{una pagina a caso}}
+$$
+- scelta tipica del fattore: $d>0  \quad , \quad d = 0.5$
+
+L'esempio precedente diventa:
+![[Pasted image 20220528173425.png|500]]
+
+- (rientra negli esempi di catena di Markov)
+
+# MODELLI DI INFLUENZA
