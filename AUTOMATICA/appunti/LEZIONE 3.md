@@ -61,19 +61,29 @@ $$
 - È analogo al caso TC, dato che: $$\underbrace{x_{i}(t+1)-x_{i}(t)}_{\Large \dot x_{i}} = f_{i}^{in}-f_{i}^{out}$$ 
 # MODELLO DI TRANSIZIONE DI STATO
 Abbiamo ancora un modello con $n$ stati. Tra uno stato e l'altro non vengono più trasferite risorse, bensì, *attributi (o qualità)*, solitamente di tipo **probabilistico**
-- Quindi ad esempio la probabilità di passare da uno stato all'altro
+- Indicano la *probabilità di trovarsi in un certo stato $x_{i}(t)$*
 
 #### ESEMPIO: PREVISIONI DEL TEMPO
 ![[Pasted image 20220527130908.png|500]]
 
 - si descrive *come si passa da uno stato all'altro*, tenendo conto della probabilità di passaggio da uno stato all'altro
 	- si studia quindi la probabilità di trovarsi in uno stato, tenendo conto della probabilità di transizione tra gli stati
+Ovviamente vale il vincolo: 
+$$
+x_{1}(t) + x_{2}(t) + x_{3}(t) = 1
+$$
 
 Sfruttando la teoria della probabilità condizionata, si può calcolare ad esempio:
-La probabilità di trovarsi nello stato piovoso al tempo $t+1$ è la seguente:
+La *probabilità di trovarsi nello stato piovoso al tempo $t+1$* è la seguente:
 ![[Pasted image 20220527131359.png|600]]
 
-
+Analogamente:
+$$
+x_{1}(t+1) = x_{1}(t) \frac{1}{2} + x_{2}(t) \frac{1}{2}
+$$
+$$
+x_{2}(t+1) = x_{1}(t) \frac{1}{2} + x_{2}(t) \frac{1}{4} + x_{3}(t) \frac{1}{2}
+$$
 
 
 

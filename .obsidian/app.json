@@ -68,6 +68,9 @@
     "Rank",
     "control",
     "cruise",
-    "causa-effetto"
+    "causa-effetto",
+    "prob",
+    "prob",
+    "Markov"
   ]
 }
