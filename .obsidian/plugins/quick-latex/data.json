@@ -7,7 +7,7 @@
   "addAlignBlock_toggle": true,
   "addAlignBlock_parameter": "align*",
   "addMatrixBlock_toggle": true,
-  "addMatrixBlock_parameter": "pmatrix",
+  "addMatrixBlock_parameter": "bmatrix",
   "addCasesBlock_toggle": true,
   "autoFraction_toggle": true,
   "autoLargeBracket_toggle": true,

@@ -57,3 +57,111 @@ Scegliamo come stato la *posizione e la velocità*
 $$
 x(t) = \begin{bmatrix} x_{1}(t) \\ x_2(t) \end{bmatrix} = \begin{bmatrix} y(t) \\ \dot y(t) \end{bmatrix} = \begin{bmatrix} \text{posizione} \\ \text{velocita'} \end{bmatrix}
 $$
+Formalizzando si arriva a scrivere le seguenti equazioni:
+- 1) come varia le posizione nel tempo
+- 2) come varia la velocità nel tempo
+$$
+\begin{cases}
+\dot x_1(t) = x_2(t) \\
+\dot x_2(t) = -\frac{b}{M} x_{2}(t) + \frac{1}{M}u(t)
+\end{cases}
+$$
+- non autonomo (ingresso $u(t)$) tempo invariante (supponendo che la massa del carrello rimanga la stessa)
+
+Essendo un *sistema lineare*, si può riscrivere tutto in forma matriciale:
+![[Pasted image 20220529235030.png]]
+
+- dove l'uscita $y(t)$ è la posizione, ovvero $y(t) = x_{1}(t)$
+
+Quindi in generale rientra nel sistema del tipo:
+$$
+\boxed{\begin{cases}
+\dot x(t) = \text{A}\ x(t) + \text{B} \ u(t) \\
+y(t) = C \ x(t)
+\end{cases}}
+$$
+
+### ESEMPIO: CIRCUITO RLC
+Sfruttando le leggi della fisica costitutive di resistore, induttore e condensatore e grazie anche a quelle di Kirchoff si giunge a scrivere, per il seguente circuito dotato di generatore di corrente:
+![[Pasted image 20220529235536.png|400]]
+
+![[Pasted image 20220529235817.png|400]]
+
+- Nota: **l'induttore e il condensatore vengono gestite come variabili di stato** perché compare come derivata della corrente, quindi come elemento con memoria. Ovvero: $$ x(t) = \begin{bmatrix} v_{c} \\ I_L \end{bmatrix} = \begin{bmatrix}x_{1}(t) \\ x_2(t)\end{bmatrix}   \quad , \quad u(t) = I(t)$$
+![[Pasted image 20220530000412.png|400]]
+
+
+# RAPPRESENTAZIONE INGRESSO - USCITA
+#### introduzione
+Un'altra rappresentazione dei sistemi dinamici (meno utilizzata in questo corso rispetto alla rappresentazione con equazione di stato)
+- Osservano l'esclusiva configurazione del sistema all'ingresso e all'uscita. Non tengono conto di cosa succede all'interno del sistema stesso. Per questo vengono dette anche *rappresentazioni esterne*
+![[Pasted image 20220530000814.png]]
+
+> [!example] Rappresentazioni interne
+Le rappresentazioni interne invece sono quelle che abbiamo visto: portano a le equazioni di stato
+![[Pasted image 20220530000900.png|300]]
+> 
+
+
+Per sistemi tempo discreto, la rappresentazione ingresso uscita è una funzione:
+- del tempo (se il sistema è tempo variante)
+- autoregressiva delle uscite
+- autoregressiva degli ingressi
+
+Autoregressiva: funzione che dipende da sé stessa agli istanti precedenti
+
+In generale (caso TD):
+$$
+y(t) = g(t,y(t-1), \dots, y(t-n),\underbrace{u(t),\dots,u(t-m)}_{\text{se non autonomo}})
+$$
+- $n$ massimo ritardo con cui compare l'uscita
+- $m$ massimo ritardo con cui compare l'ingresso
+- *lo stato non compare* (esplicitamente)
+
+#### REGRESSORE
+Si può sempre passare da questa rappresentazione a quella equazione di stato
+- in linea generale, dovremo reperire le informazioni necessarie per descrivere gli istanti successivi $t+1$
+
+Si tengono in memoria pertanto (cfr. Esempio successione Fibonacci):
+- gli ultimi $m$ ingressi
+- le ultime $n$ uscite
+In generale considerando il caso non autonomo, si ottiene il seguente **regressore**:
+$$
+x(t) = \begin{bmatrix} y(t-1) \\ \vdots \\ y(t-n) \\ u(t-1) \\ \vdots \\ u(t-m) \end{bmatrix} = \begin{bmatrix} x_{1}(t) \\ \vdots \\ x_{n}(t)\\ x_{n+1}(t) \\ \vdots \\ x_{n+m}(t) \end{bmatrix}
+$$
+- **abbiamo $n$ + $m$** variabili di stato
+
+#### FORMULAZIONE GENERALE
+Da qui si passa alla formulazione equazione di stato, in questo modo (cfr. Fibonacci per esempio specifico + esercizi)
+![[Pasted image 20220530003108.png]]
+
+### ESEMPIO: SUCCESSIONE FIBONACCI
+$$
+y(t) = g(y(t-1) + y(t-2))  \quad , \quad y(0) = 1 \text{ e } y(1) =1
+$$
+- sistema autonomo ($m$ non presente)
+- $n=2$
+
+Equazioni di stato: individuo ciò che ha memoria (ovvero gli ultimi due valori della successione che servono per calcolare quello nuovo):
+$$
+x(t) = \begin{bmatrix} y(t-1) \\ y(t-2) \end{bmatrix} = \begin{bmatrix} x_{1}(t)\\ x_{2}(t)\end{bmatrix}
+$$
+L'uscita del sistema (immediata) è data da:
+$$
+y(t) = x_{1}(t) + x_{2}(t)
+$$
+L'equazioni che legano lo stato invece, per ogni componente di stato sono della forma:
+$$
+x(t+1) = f(x(t))
+$$
+- cioè l'stante successivo dipende dall'istante attuale inserito in una apposita funzione $f$
+Pertanto:
+- per $x_{1}(t+1)$ prendo $x_{1}(t) = y(t-1)$ e faccio scorrere di $1$ l'indice temporale, quindi: $x_{1}(t+1) = y(t)$ 
+- faccio lo stesso per $x_{2}(t+1)$
+![[Pasted image 20220530002459.png]]
+
+Sono le **equazioni dello stato del sistema**
+- da cui come vedramo con l'analisi si può studiare il comportamento
+
+
+
