@@ -80,3 +80,56 @@ L'esempio precedente diventa:
 - (rientra negli esempi di catena di Markov)
 
 # MODELLI DI INFLUENZA
+In questi modelli vengono descritti i modi con cui una certa grandezza può *influenzare* un'altra grandezza.
+- Più in generale studiano le *interazioni* tra varie grandezza
+
+### ESEMPIO: MODELLO PREDA-PREDATORE
+Si studia come l'interazione tra *due animali* influenza l'*ecosistema*
+- La prima popolazione è relativa alla preda ed è indicata con $x_{1}(t)$
+- La seconda popolazione è relativa al predatore ed è indicata con $x_{2}(t)$
+$$
+\begin{cases}
+\dot x_{1}(t) &= &\overbrace{\alpha x_{1}(t)}^{\text{solo prede}} - \overbrace{\beta x_{1}(t)x_{2}(t)}^{\text{predatori}} \\
+\dot x_{2}(t) &= &-\delta x_{2}(t) + \gamma x_{1}(t)x_{2}(t) \\
+\end{cases}
+$$
+- Prima equazione: di per sè le prede tendono ad aumentare, ma la presenza di predatori fa ridurre questa crescita
+- Seconda equazione: di per sè i predatori tendono a diminuire, ma la presenza di prede fa invertire questo trend
+
+
+Ad esempio, si possono influenza in questo modo:
+	Un numero alto di predatori causa una riduzione della popolazione delle prede
+	Un numero basso di prede causa una riduzione della popolazione di predatori
+
+![[Pasted image 20220528184658.png|600]]
+
+Con $\alpha, \delta > 0$
+
+## MODELLO GENERALE
+![[Pasted image 20220528185106.png]]
+- il secondo termine (addendo) è ciò che influenza la crescita/decrescita del modello
+
+Qualora ci fossero degli ingressi il modello diventa il seguente:
+![[Pasted image 20220528185335.png]]
+- nel caso di preda/predatori potrebbe essere la caccia oppure un ripopolamento "artificiale" eseguito dall'esterno (dall'uomo)
+
+### ESEMPIO: DINAMICA DI OPINIONE
+Si associa un opinione $x_{i}(t)$ a ogni utente $i$
+- Se $x_{i}(t) =0$ allora la valutazione è neutra (indifferente)
+- Se $x_{i}(t) >0$ allora la valutazione è positiva
+- Se $x_{i}(t) <0$ allora la valutazione è negativa
+
+Ogni utente è influenzato da una cerchia di persone (amici, conoscenti etc...), che indichiamo con $N_{i}$
+
+Si arriva a definire l'equazione del modello:
+$$
+\large \dot x_{i}(t) = \sum_{j\in N_i} w_{ij}(x_{j}(t)-x_{i}(t))  \quad , \quad i=1,\dots,n
+$$
+- dove $w_{ij}$ è il peso del nodo $i$ sull'opinione di $j$ (maggiore se è un conoscente stretto, parente etc..)
+- Si esegue in pratica la differenza tra la mia opinione e quella di un mio amico 
+	- Se questo valore è positivo, allora il mio amico ha una opinione migliore della mia
+		- Tende a influenzare positivamente la mia opinione (derivata positiva)
+	- - Se questo valore è negativo, allora il mio amico ha una opinione peggiore della mia
+		- - Tende a influenzare negativamente la mia opinione (derivata negativa)
+	- Reitero poi questo per ogni mio amico (sommatoria $\Sigma$)
+
