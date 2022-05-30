@@ -118,8 +118,8 @@ $$
 - $m$ massimo ritardo con cui compare l'ingresso
 - *lo stato non compare* (esplicitamente)
 
-#### REGRESSORE
-Si può sempre passare da questa rappresentazione a quella equazione di stato
+#### PASSAGGIO ALLE EQ. DI STATO: REGRESSORE
+**Si può sempre passare da questa rappresentazione a quella equazione di stato**
 - in linea generale, dovremo reperire le informazioni necessarie per descrivere gli istanti successivi $t+1$
 
 Si tengono in memoria pertanto (cfr. Esempio successione Fibonacci):
@@ -130,6 +130,7 @@ $$
 x(t) = \begin{bmatrix} y(t-1) \\ \vdots \\ y(t-n) \\ u(t-1) \\ \vdots \\ u(t-m) \end{bmatrix} = \begin{bmatrix} x_{1}(t) \\ \vdots \\ x_{n}(t)\\ x_{n+1}(t) \\ \vdots \\ x_{n+m}(t) \end{bmatrix}
 $$
 - **abbiamo $n$ + $m$** variabili di stato
+- come si nota, si tengono in memoria solo le suquende delle uscite e degli eventuali ingressi
 
 #### FORMULAZIONE GENERALE
 Da qui si passa alla formulazione equazione di stato, in questo modo (cfr. Fibonacci per esempio specifico + esercizi)
@@ -161,7 +162,21 @@ Pertanto:
 ![[Pasted image 20220530002459.png]]
 
 Sono le **equazioni dello stato del sistema**
-- da cui come vedramo con l'analisi si può studiare il comportamento
+- da cui come vedremo con l'analisi si può studiare il comportamento
 
 
-
+ ### ESERCIZI di PASSAGGIO ALLE EQ. DI STATO
+ 
+#### 1)
+$y(t) = 2 y(t-1) y(t-2) u(t-1)$ 
+Avremo quindi:
+$$
+\begin{cases}
+n=2 \\
+m=1
+\end{cases}
+$$
+Lo stato ha dimensione $m+n = 3$ 
+$$
+x(t) = \begin{bmatrix} y(t-1) \\ y(t-2) \\ u(t-1) \end{bmatrix} = 
+$$
