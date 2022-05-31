@@ -102,7 +102,7 @@ Le rappresentazioni interne invece sono quelle che abbiamo visto: portano a le e
 ![[Pasted image 20220530000900.png|300]]
 > 
 
-
+## TEMPO DISCRETO (TD)
 Per sistemi tempo discreto, la rappresentazione ingresso uscita è una funzione:
 - del tempo (se il sistema è tempo variante)
 - autoregressiva delle uscite
@@ -110,7 +110,7 @@ Per sistemi tempo discreto, la rappresentazione ingresso uscita è una funzione:
 
 Autoregressiva: funzione che dipende da sé stessa agli istanti precedenti
 
-In generale (caso TD):
+In generale (**caso TD**):
 $$
 y(t) = g(t,y(t-1), \dots, y(t-n),\underbrace{u(t),\dots,u(t-m)}_{\text{se non autonomo}})
 $$
@@ -118,7 +118,7 @@ $$
 - $m$ massimo ritardo con cui compare l'ingresso
 - *lo stato non compare* (esplicitamente)
 
-#### PASSAGGIO ALLE EQ. DI STATO: REGRESSORE
+#### PASSAGGIO ALLE EQ. DI STATO: REGRESSORE (caso td)
 **Si può sempre passare da questa rappresentazione a quella equazione di stato**
 - in linea generale, dovremo reperire le informazioni necessarie per descrivere gli istanti successivi $t+1$
 
@@ -135,6 +135,11 @@ $$
 #### FORMULAZIONE GENERALE
 Da qui si passa alla formulazione equazione di stato, in questo modo (cfr. Fibonacci per esempio specifico + esercizi)
 ![[Pasted image 20220530003108.png]]
+
+Si noti come:
+- la prima equazione di stato $x_{1}(t+1)$ si ricava semplicemente dalla relazione ingresso uscita, infatti è uguale a $y(t)$
+- le altre tengono in memoria il necessario, e si ottengono eseguendo uno shift (vale per gli ingressi e per le uscite)
+- l'equazione di uscita è anch'essa data dalla semplice $y(t)$, ovvero la rappresentazione ingresso-uscita
 
 ### ESEMPIO: SUCCESSIONE FIBONACCI
 $$
@@ -165,18 +170,5 @@ Sono le **equazioni dello stato del sistema**
 - da cui come vedremo con l'analisi si può studiare il comportamento
 
 
- ### ESERCIZI di PASSAGGIO ALLE EQ. DI STATO
  
-#### 1)
-$y(t) = 2 y(t-1) y(t-2) u(t-1)$ 
-Avremo quindi:
-$$
-\begin{cases}
-n=2 \\
-m=1
-\end{cases}
-$$
-Lo stato ha dimensione $m+n = 3$ 
-$$
-x(t) = \begin{bmatrix} y(t-1) \\ y(t-2) \\ u(t-1) \end{bmatrix} = 
-$$
+
