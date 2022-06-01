@@ -81,6 +81,8 @@
     "autoregressiva",
     "autoregressiva",
     "regressore",
-    "Cauchy"
+    "Cauchy",
+    "pre",
+    "diagonalizzabile"
   ]
 }
