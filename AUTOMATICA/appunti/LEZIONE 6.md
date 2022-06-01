@@ -21,16 +21,15 @@ $$
 &x_{1}(t+1) = y(t) =  2 \overbrace{y(t-1)} \overbrace{y(t-2)} \overbrace{u(t-1)} = 2 x_{1}(t) x_{2}(t) x_{3}(t)\\
 &x_{2}(t+1) = y(t-1) = x_{1}(t)  \\
 &x_{3}(t+1) = u(t)
-\end{align*} $$
+\end{align*}
+$$
 Riscrivendo:
 $$
 \begin{cases}
 x_{1}(t+1)  = 2 x_{1}(t) x_{2}(t) x_{3}(t)\\
 x_{2}(t+1) = x_{1}(t)  \\
 x_{3}(t+1) = u(t)
-
-\end{cases}
- \quad , \quad y(t) = 2 x_{1}(t)x_{2}(t)x_{3}(t)
+\end{cases} \quad , \quad y(t) = 2 x_{1}(t)x_{2}(t)x_{3}(t)
 $$
 #### 2)
 $$
