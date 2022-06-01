@@ -96,7 +96,9 @@ Scritto meglio:
 ![[Pasted image 20220601154827.png|500]]
 
 - dove il primo addendo *dipende soltanto dalla condizione iniziale*: viene detta **evoluzione libera $x_{\ell}(t)$**
+	- Cioè l'evoluzione del sistema senza sollecitazioni esterne
 - dove il secondo addendo *dipende soltanto dall'ingresso*: viene detta **evoluzione forzata $x_{f}(t)$**
+	- Come l'ambiente esterno sollecita il sistema (avviene quando $x(0)=0$)
 
 L'evoluzione **complessiva** quindi (essendo un sistema lineare) si ottiene dalla combinazione di evoluzione libera e forzata
 
@@ -104,7 +106,11 @@ L'**uscita**, essendo in generale
 $$
 y(t) = \text{C} x(t)  + \text{D} u(t) = \text{C} \big[ x_{\ell}(t) + x_{f}(t) \big] + \text{D} u(t) = \underbrace{\text{C} x_{\ell}(t)}_{\Large y_{\ell}(t)}+ \underbrace{\text{C}x_{f}(t)+Du(t)}_{\Large y_{f}(t)}
 $$
+- Dove $y_{\ell}(t)$ è detta *risposta libera*
+- Dove $y_{f}(t)$ è detta *risposta forzata*
+
+Quindi risposta $\longleftrightarrow$ evoluzione dell'uscita
+
 Riassumendo
 ![[Pasted image 20220601155414.png|500]]
-
 
