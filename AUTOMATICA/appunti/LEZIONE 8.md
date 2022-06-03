@@ -133,7 +133,8 @@ e^{A0} = I = \text{matrice identita'}
 $$
 ### COME SI CALCOLA
 - Per definizione, se la matrice è diagonalizzabile
-- Trasformata di Laplace, se la matrice non è diagonalizzabile
+- **Trasformata di Laplace**, se la matrice non è diagonalizzabile
 
 ### PERCHE' SI CALCOLA
 Per capire l'evoluzione del tempo dell'evoluzione libera e di quella forzata
+- In generale le **traiettorie** che il mio sistema dinamico può adottare
