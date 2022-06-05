@@ -140,7 +140,9 @@ $$
 - Per questo andremo a scomporre la $F(s)$ (razionale) in una combinazione lineare di **funzioni elementari** e poi andremo ad antitrasformare ciascun termine elementare (con la tabellina)
 
 ### ESEMPIO
+- Nota: $F(s)$ viene scomposta in $2$ fratti semplici perché ci sono altrettanti poli al denominatore
+	- In particolare associato a ogni polo in questo caso abbiamo dei termini esponenziali (uno convergente e uno divergente)
 ![[Pasted image 20220603163832.png|700]]
 
-Solo dopo (per comodità) calcoliamo $K_{1}$ e $K_{2}$:
+Solo *dopo* (per comodità) calcoliamo $K_{1}$ e $K_{2}$:
 ![[Pasted image 20220603163938.png|450]]

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "AUTOMATICA/appunti/LEZIONE 11.md",
+            "file": "AUTOMATICA/appunti/LEZIONE 12.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AUTOMATICA/appunti/LEZIONE 11.md",
+                "file": "AUTOMATICA/appunti/LEZIONE 12.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +97,7 @@
   },
   "active": "3af7c57ce21072bb",
   "lastOpenFiles": [
+    "AUTOMATICA/appunti/LEZIONE 12.md",
     "AUTOMATICA/appunti/LEZIONE 11.md",
     "AUTOMATICA/appunti/LEZIONE 8.md",
     "AUTOMATICA/appunti/LEZIONE 9.md",
@@ -105,7 +106,6 @@
     "Untitled.md",
     "AUTOMATICA/appunti/ZZZZ.md",
     "AUTOMATICA/appunti/LEZIONE 7.md",
-    "AUTOMATICA/appunti/LEZIONE 6.md",
-    "AUTOMATICA/pdf/LEZIONE 6.pdf"
+    "AUTOMATICA/appunti/LEZIONE 6.md"
   ]
 }
