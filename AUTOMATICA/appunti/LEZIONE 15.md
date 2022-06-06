@@ -71,5 +71,4 @@ Rimane alla fine un $\lambda_{i}$ (polo con molteplicità almeno $1$)
 ![[Pasted image 20220606122920.png|600]]
 
 - Analogamente a quanto visto in precedenza solo che adesso teniamo conto del polinomio minimo $m(s)$
-- gli elementi della matrice esponenziale sono una combinazione lineare dei modi di evoluzione del sistema
-
+- Gli elementi della matrice esponenziale sono una combinazione lineare dei modi di evoluzione del sistema
