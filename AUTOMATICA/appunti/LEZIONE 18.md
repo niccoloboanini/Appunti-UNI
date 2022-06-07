@@ -77,7 +77,7 @@ Con $\Psi(t,x_{0},u)$ **mappa transizione dell'uscita**
 - la mappa di transizione di stato invece mi dava informazioni sullo stato (invece dell'uscita)
 
 ## EFFETTO PERTURBAZIONE
-Confronto tra:
+Confronto tra uscita con ingresso *nominale $u$* e uscita con ingresso perturbato $\tilde u$:
 $$
 y(t) = \Psi(t,x_{0},u) \longleftrightarrow y(t) = \Psi(t,x_{0},u+\tilde u)
 $$
@@ -107,19 +107,11 @@ Quindi possiamo riscrivere al solito:
 $$
 G(s) = \frac{b(s)}{a(s)}
 $$
-Un sistema è esternamente stabile **se tutti i poli di $G(s)$ hanno parte reale $<0$**
+Un sistema è esternamente stabile **se e solo se tutti i poli di $G(s)$ hanno parte reale $<0$**
 - Ovvero si trovano nella regione di stabilità nel piano $s$, corrispondente al semipiano sinistro
 ![[Pasted image 20220607130206.png|200]]
 - Non si ammettono come nella stabilità interna i poli in $0$ (condizione più restrittiva per la stabilità esterna)
 
 Quindi l'effetto degli ingressi o si mantiene limitato oppure è illimitato (non c'è vie di mezzo)
 - In caso di multipli ingressi, $G(s)$ è una matrice quindi in quel caso vado a vedere tutti i poli di ogni elemento di tale matrice
-
-
-## STABILITA' - RIASSUNTOZZO
-![[Pasted image 20220607130427.png|600]]
-
-> Per la stabilità interna devo guardare $\varphi(s)$ ed eventualmente $m(s)$ (non basta $G(s)$, perché potrebbero esserci poli nascosti)
-
-> Per la stabilità esterna mi basta vedere $G(s)$ (funzione di trasferimento), senza interessi circa la molteplicità, a differenza della stabilità interna
 
