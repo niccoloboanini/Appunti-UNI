@@ -60,17 +60,17 @@ $$
 **Rinominiamo la funzione di trasferimento con $G(s)$**
 - Ci dice nel dominio di Laplace come si evolve in rappresentazione ingresso uscita il sistema.
 - In generale $G(s)$ è una matrice, dato che $U(s)$ e $Y_{f}(s)$ sono vettori colonna
-	- Ciascun elemento della matrice ci dive la relazione tra l'ingresso e l'uscita corrispondenti alla riga e alla colonna di riferimento
+	- *Ciascun elemento della matrice ci dive la relazione tra l'ingresso e l'uscita corrispondenti alla riga e alla colonna di riferimento*
 		- Esempio: elemento $i,\ell \longleftrightarrow \text{relazione tra } \ell \text{-esimo ingresso e } i \text{-esima uscita}$ 
 
-*Per semplicità consideriamo sistemi* **SISO**, quindi $U(s)$ e $Y_{f}(s)$ sono scalari. Avremo $Y_{f}(s) = G(s) U(s)$, quindi:
+*Per semplicità consideriamo sistemi* **SISO**, quindi $U(s)$ e $Y_{f}(s)$ sono scalari. Avremo $Y_{f}(s) = G(s)\ U(s)$, quindi la possiamo scrivere come rapporto di polinomi:
 $$
 \large \boxed{G(s) = \frac{b(s)}{a(s)}}
 $$
 - con i relativi *poli del sistema* (zeri di $a(s)$) e gli *zeri del sistema* (zeri di $b(s)$)
 - $G(s)$ è una *funzione razionale*, infatti 
 ![[Pasted image 20220606183316.png|500]]
-
+Quindi in generale abbiamo $\displaystyle G(s) = \frac{r(s)}{\varphi(s)}+D$, ma nella frazione che compare potrebbero esserci semplificazioni (vedi dopo)
 
 #### ESEMPIO SISTEMA MECCANICO
 - Consideriamo finalmente anche l'ingresso $u(s)$, ovvero la forza che spinge il carrello
@@ -86,22 +86,39 @@ Passi:
 	 ![[Pasted image 20220606184618.png|400]]
 		 - cambia l'uscita --> cambia la funzione di trasferimento (essa non è una proprietà intrinseca, dipende dalle manovre che facciamo dall'esterno su di essa)
 		 - scompare l'autovalore in $0$
+Riassumendo quest'ultima cosa:
+![[Pasted image 20220607104122.png|500]]
+
 ## RELAZIONE POLI - AUTOVALORI
 Abbiamo detto che:
 $$
-G(s) = \frac{r(s)+D \varphi(s)}{\varphi(s)}=\frac{b(s)}{a(s)}
+\large G(s) = \frac{r(s)+D \varphi(s)}{\varphi(s)}=\frac{b(s)}{a(s)}
 $$
 - $\varphi(s)$ ha molteplicità $\mu_{i}$
 Allora:
-- $G(s)$ ha molteplicità $v_{i}$
+- $G(s)$ ha molteplicità $\nu_{i}$ 
 
-Possiamo facilmente dire che: 
+Infatti possiamo facilmente dire che: 
 $$
-\boxed{0 \leq v_{i} \leq \mu_{i}}  \quad , \quad \text{perchè potrebbero esserci semplificazioni}
+\boxed{\Large 0 \leq \nu_{i} \leq \mu_{i}}  \quad , \quad \text{perchè potrebbero esserci semplificazioni}
 $$
 - quindi l'**autovalore può scomparire**
 
-Vale più in generale la seguente relazione tra le molteplicità relazione: $v_{i} \leq m_{i} \leq \mu_{i}$
+Vale più in generale la seguente relazione tra le molteplicità: $\large \nu_{i} \leq m_{i} \leq \mu_{i}$
 
-Quindi: *i poli del sistema sono un sottoinsieme degli autovalori del sistema*
+Quindi: *i poli del sistema* (radici di $a(s)$),  *sono un sottoinsieme degli autovalori del sistema* (radici di $\varphi(s)$). Questo dovuto al fatto che potrebbero esserci semplificazioni
 - Gli autovalori che non compaiono all'uscita (ma che internamente ci sono), sono detti **autovalori nascosti**
+
+![[Pasted image 20220607103411.png|200]]
+
+Quindi possiamo dire in generale che $\varphi(s)$ contiene sia $\underbrace{a(s)}_{\text{den. f. trasf.}}$ che $\underbrace{\varphi_{h}(s)}_{\text{polinomio autov. nascosti}}$, quindi: $\varphi(s) = a(s)\varphi_{h}(s)$
+
+Possiamo definire il polinomio degli autovalori nascosti come segue:
+$$
+\boxed{\large \varphi_{h}(s) = \frac{\varphi(s)}{a(s)}}
+$$
+Quindi come già detto **la funzione di trasferimento** non dipende internamente dalle proprietà interne (intrinseche) del sistema, ma **dipende invece dagli ingressi inserirti e da cosa andiamo a osservare** 
+- cioè dalla matrice $B$, che dice come l'ingresso agisce sull'uscita
+- e dalle matrici $C$ e $D$, che dicono cosa vado ad osservare
+
+
