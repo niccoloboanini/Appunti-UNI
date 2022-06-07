@@ -48,7 +48,7 @@
 Abbiamo la derivata dell'ordine massimo del sistema è data dalla somma delle uscite precedenti (derivate di ordine più basso) e dalla somma degli ingressi e delle sue derivate
 ![[Pasted image 20220607180258.png|600]]
 
-**Idea: passare alle equazioni di stato e poi applicare tutti i metodi già visti**
+**(prima) Idea: passare alle equazioni di stato e poi applicare tutti i metodi già visti**
 - cioè passare da una equazione differenziale a una equazione di stato
 
 #### INGRESSO NON DERIVATO
@@ -73,5 +73,25 @@ Dove i coefficienti $\alpha$ e $\beta$ si trovano nel generico sistema LTI TC (v
 - Basta prestare attenzione ai coefficienti
 - Poi posso subito passare alle matrici $A,B,C,D$
 ![[Pasted image 20220607181234.png|600]]
+- uso questo metodo solo se mi servono esplicitamente le equazioni di stato, altrimenti cfr. Metodo successivo
+---
+## DOMINIO DI LAPLACE
+L'alternativa per lavorare con sistemi LTI in rappresentazione ingresso uscita e trovare quindi la loro soluzione/analisi è passare al dominio di Laplace attraverso la trasformata
+Infatti, facendo la derivata delle varie uscite $y(t)$ si ottiene:
+![[Pasted image 20220607185500.png|500]]
+In generale quindi **la generica derivata dell'uscita è data da**:
+$$
+\large \boxed{\mathcal{L}\{y^{(i)}\} = s^{i}Y(s) - s^{i-1}y(0)-\dots-s y^{(i-2)}(0)-y^{(i-1)}(0)}
+$$
+- Questo metodo è utile anche per risolvere equazioni differenziali, ad esempio il seguente è un sistema integratore:
+![[Pasted image 20220607185943.png|400]]
 
+#### FUNZIONE DI TRASFERIMENTO
+Con il metodo visto si può facilmente trovare la funzione di trasferimento (o la risposta forzata):
+- Ponendo le condizioni iniziali a $0$
+![[Pasted image 20220607190454.png|500]]
+- scrivo nel dominio di Laplace la risposta forzata a partire dall'ingresso
+- se necessario faccio semplificazioni
+	- utile ad esempio se devo studiare la stabilità esterna, perché ho una formula per $Y_{f}(t)$ 
+		- E potrò derivare facilmente anche $\varphi(s)$ e $m(s)$ perché coincidono entrambi con il denominatore
 
