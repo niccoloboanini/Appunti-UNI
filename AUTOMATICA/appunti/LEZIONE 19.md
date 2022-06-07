@@ -102,3 +102,15 @@ Nel caso in cui sia verificata la condizione necessaria per polinomi di grado ma
  - Se tutti i coefficienti sono diversi da zero e hanno lo stesso segno allora il polinomio è stabile
  - Se c'è un coefficiente è zero o c'è una variazione di segno allora il polinomio non è stabile 
 ![[Pasted image 20220607161902.png|600]]
+
+### ESEMPIO: POLINOMIO DI TERZO GRADO (usato negli esercizi)
+![[Pasted image 20220607172358.png|400]]
+
+### CASO GENERALE
+- Metto al denominatore il primo elemento della riga precedente e poi si moltiplica per il determinante della matrice composta nella prima colonna dagli elementi della prima colonna e poi gli elementi della colonna successiva rispetto all'elemento di riferimento
+![[Pasted image 20220607172902.png|500]]
+- negli esercizi al massimo avremo il grado $3$
+
+### CRITERIO DI ROUTH-HURWITZ
+![[Pasted image 20220607173036.png]]
+
