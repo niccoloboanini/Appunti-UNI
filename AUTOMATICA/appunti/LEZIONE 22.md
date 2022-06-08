@@ -111,7 +111,7 @@ Valgono le seguenti (casi indipendenti dalla molteplicità):
 ![[Pasted image 20220608155029.png]]
 - nel caso critico dovrei considerare approssimazioni di Taylor a un ordine più grande
 
-### ESERCIZI
+### ESERCIZIO 1)
 - Trovo i punti di equilibrio (già fatto in esercizio precedente)
 - Compongo la matrice Jacobiana $A_{e}$
 	- Calcolo il risultato nei vari punti di equilibrio
