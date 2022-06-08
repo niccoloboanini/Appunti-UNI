@@ -43,9 +43,10 @@
 ---
 
 # ANALISI SISTEMI LTI IN RAPPRESENTAZIONE INGRESSO/USCITA
+##### NOTA: PER L'ESAME SARANNO UTILI LE FORMULE CHE SI TROVANO IN FONDO A QUESTO CAPITOLO. STUDIARE BENE ANCHE GLI ESERCIZI RELATIVI
 - Studiamo il caso dei sistemi SISO
-
-Abbiamo la derivata dell'ordine massimo del sistema è data dalla somma delle uscite precedenti (derivate di ordine più basso) e dalla somma degli ingressi e delle sue derivate
+Abbiamo la derivata dell'ordine massimo del sistema (che corrisponde a $n$ ovvero l'ordine del sistema) è data dalla somma delle uscite precedenti (derivate di ordine più basso) e dalla somma degli ingressi e delle sue derivate
+- Viene detta per questo in *forma normale*
 ![[Pasted image 20220607180258.png|600]]
 
 **(prima) Idea: passare alle equazioni di stato e poi applicare tutti i metodi già visti**
@@ -76,7 +77,9 @@ Dove i coefficienti $\alpha$ e $\beta$ si trovano nel generico sistema LTI TC (v
 - uso questo metodo solo se mi servono esplicitamente le equazioni di stato, altrimenti cfr. Metodo successivo
 ---
 ## DOMINIO DI LAPLACE
+### (piccolo approfondimento)
 L'alternativa per lavorare con sistemi LTI in rappresentazione ingresso uscita e trovare quindi la loro soluzione/analisi è passare al dominio di Laplace attraverso la trasformata
+- Tanto mi interessano solo gli oggetti per l'analisi ovvero $\varphi(s),m(s),G(s)$
 Infatti, facendo la derivata delle varie uscite $y(t)$ si ottiene:
 ![[Pasted image 20220607185500.png|500]]
 In generale quindi **la generica derivata dell'uscita è data da**:
@@ -86,12 +89,48 @@ $$
 - Questo metodo è utile anche per risolvere equazioni differenziali, ad esempio il seguente è un sistema integratore:
 ![[Pasted image 20220607185943.png|400]]
 
-#### FUNZIONE DI TRASFERIMENTO
+### FUNZIONE DI TRASFERIMENTO G(s) <--
 Con il metodo visto si può facilmente trovare la funzione di trasferimento (o la risposta forzata):
+- Funzione di trasferimento (formula):
+![[Pasted image 20220608112800.png]]
+- Da cui come si intuisce dovremo poi *effettuare le semplificazioni* per giungere a un rapporto di polinomi $b(s)/a(s)$, ovvero:
+$$
+G(s) = \frac{b(s)}{a(s)}
+$$
+### RISPOSTA FORZATA
 - Ponendo le condizioni iniziali a $0$
-![[Pasted image 20220607190454.png|500]]
+![[Pasted image 20220607190454.png|600]]
 - scrivo nel dominio di Laplace la risposta forzata a partire dall'ingresso
 - se necessario faccio semplificazioni
 	- utile ad esempio se devo studiare la stabilità esterna, perché ho una formula per $Y_{f}(t)$ 
-		- E potrò derivare facilmente anche $\varphi(s)$ e $m(s)$ perché coincidono entrambi con il denominatore
+		- E potrò derivare facilmente anche $\varphi(s)$ e $m(s)$ perché coincidono entrambi con il denominatore come vediamo adesso
+
+### POLINOMIO CARATTERISTICO E MINIMO
+Si dimostra che:
+- $\varphi(s)$ **coincide con il denominatore di $G(s)$ prima delle semplificazioni**
+- $m(s) = \varphi(s)$ 
+
+Quindi:
+$$
+den(G(s)) = s^{n} - a_{n-1}s^{n-1}- \dots -\alpha_{1}s-\alpha_{0} = \varphi(s) = m(s)
+$$
+#### DIMOSTRAZIONE
+- Calcolo $\varphi(s)$ come $\det (sI-A)$ dell matrice in forma canonica di osservazione e si osserva che viene la stessa cosa
+- Si vede anche che non si semplifica nulla quindi $\varphi(s) = m(s)$
+
+ >Quindi in generale è ancora più facile trovare gli oggetti necessari per l'analisi di stabilità del sistema partendo dalle equazioni differenziali in forma di derivate di ordine successivo dell'uscita e degli ingressi come visto
+
+##### RIASSUMENDO 
+ ![[Pasted image 20220608113754.png|600]]
+ - Questa slide include tutto ciò che ci serve per studiare la stabilità per un sistema in rappresentazione ingresso uscita
+
+## ESERCIZI: STUDIO STABILITA'
+- Individuo ordine $\large n$ (massimo ordine di derivazione con cui compare l'uscita)
+- Trovo i vari coefficienti a partire dalle formule generali
+- Scrivo $\varphi(s)$
+	- Individuo gli autovalori (zeri di $\varphi(s)$) e la relativa posizione sul piano complesso $s$
+		- Concludo sulla stabilità interna
+- Calcolo $G(s)$
+	- Eseguo eventuali semplificazioni
+		- Concludo sulla stabilità esterna
 
