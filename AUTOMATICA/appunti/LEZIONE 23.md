@@ -38,7 +38,7 @@ Facciamo anche le seguenti ipotesi, così da poter scomporre in fratti semplici:
 Rinominiamoli così:
 ![[Pasted image 20220608173837.png|500]]
 - nelle *ipotesi di poli distinti tra funzione di trasferimento e ingresso*
-	- (indipendentemente dalla stabilità anche se sarà utile il calcolo in caso di stabilità)
+	- (indipendentemente dalla stabilità anche se sarà utile il calcolo in caso di stabilità. In particolare il regime permanente ci fornisce informazioni utili quando il sistema che stiamo studiando è stabile. Vedi dopo)
 
 Per linearità, posso calcolare i due contributi nel tempo tramite l'antitrasformata
 - Si ottiene così:
@@ -53,6 +53,57 @@ Quindi:
 ![[Pasted image 20220608175241.png|200]]
 
 #### STABILITà E REGIME PERMANENTE
+Considerazioni importanti che mettono in collegamento quanto visto adesso con la stabilità.
 ![[Pasted image 20220608175438.png]]
+
 ![[Pasted image 20220608175603.png|600]]
- 
+Basta osservare il $\lim_{t \to 0} y_{\tiny f}(t)$:
+- Nel caso di **stabilità esterna abbiamo**: $y_{f}(t) = \cancelto{0}{y_{f}^{G}(t)}+y_{f}^{U}(t)$ >> la *risposta forzata* tende al regime permanente
+- Nel caso di **stabilità asintotica** invece: $y_(t) = \cancelto{0}{y_{\ell}(t)} + \cancelto{0}{y_{f}^{G}(t)}+{y_{f}^{U}(t)}$ >> la *risposta complessiva* tende al regime permanente
+	- Perché se è stabile asintoticamente è anche stabile esternamente
+	- In più la risposta libera $\cancelto{0}{y_{\ell}(t)}$ 
+
+>> Il regime permanente dà informazioni circa l'andamento asintotico di un sistema stabile.
+
+
+## REGIME PERMANENTE PER SEGNALI D'INGRESSO TIPICI
+
+### GRADINO
+#### RISPOSTA IN CONTINUA
+- DEFINIZIONE: Regime permanente in risposta a un ingresso costante a gradino
+
+Si suppone che $G(s)$ non abbia poli in $0$ così da avere poli distinti e rientrare nelle ipotesi e fare la scomposizione in fratti semplici
+- In particolare, la scomposizione di $Y_{f}^{G}(s)$ non mi interessa per il momento; invece la scomposizione di $Y_{f}^{U}(s)$ è $\tilde K / s$ perché abbiamo un unico polo dell'ingresso (in $0$)
+	- Mi focalizzo soltanto su com'è fatto il regime permanente (che è quello che mi interessa)
+- $\tilde K$ è al solito calcolabile con la formula dei residui
+![[Pasted image 20220609114847.png|600]]
+
+Mandando in ingresso al sistema un gradino, abbiamo in uscita come regime permanente ancora un gradino di ampiezza originale $U_{0}$ moltiplicata per $G(0)$  (infatti antitrasformando $\tilde K /s$ è $G(0)U_{0} \ 1(t)$)
+- Questo nelle ipotesi che l'ingresso non abbia poli in zero
+- In altre parole come detto, la risposta forza tenderà a un regime permanente che è ancora un gradino nelle ipotesi fatte
+- Ci sarà all'inizio anche un po' di transitoria ma poi svanisce a zero e rimane solo la permanente
+
+$G(0)$ viene detto *guadagno in continua*
+![[Pasted image 20220609115010.png|500]]
+Quindi per calcolare il guadagno per sistemi SISO (quelli degli esercizi), una volta ottenuta $G(s)$ 
+basta calcolarla per $s=0$, ovvero: $\boxed{\left . G(s) \right |_{s=0} = G(s)}$ 
+##### ESEMPIO DI CALCOLO DEL GUADAGNO IN CONTINUA
+- Controllo che $G(s)$ non abbia poli in zero
+- Eseguo eventuali semplificazioni
+- Se sono arrivato fin qui, allora conosco già la forma del regime permanente: $y_{f}^{U}(t) = G(0)U_{0}1(t)$
+- Calcolo $\left . G(s)\right |_{s=0}$
+	- Se viene $>0$ abbiamo un guadagno, altrimenti una attenuazione
+- Controllo se il sistema è esternamente stabile
+	- Ad esempio con i metodi algebrici oppure calcolando i poli di $G(s)$
+- Posso scrivere eventualmente l'evoluzione asintotica della risposta forzata $\lim_{t \to \infty} y_{f}(t)$
+![[Pasted image 20220609115928.png|600]]
+
+### SINUSOIDE
+- Leggermente più complesso perché abbiamo poli puramente immaginari nella trasformata
+	- Facendo il prodotto per calcolare $Y_{f}(s)$ otteniamo una funzione che va poi separata coi fratti semplici. In particolare ancora una volta, mi interessa solo l'addendo relativo all'ingresso ovvero $Y_{f}^{U}(s)$
+		- Siccome l'ingresso ha due poli, abbiamo due addendi e quindi due residui $\tilde K_{1}$ e $\tilde K_{2}$
+- Per trovare il regime permanente faccio l'antitrasformata dei due fratti semplici che mi interessano, così da ottenere appunto $y_{f}^{U}(s)$
+- Basta trovare uno dei due residui perché sono l'uno il complesso coniugato dell'altro
+*Tutto questo vale se $G(s)$ non ha poli in $\pm j \omega_0$* (sennò entra in risonanza)
+![[Pasted image 20220609120634.png|600]]
+>> Otteniamo come regime permanente ancora una sinusoide di frequenza $\omega_{0}$
