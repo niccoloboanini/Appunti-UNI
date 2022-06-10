@@ -25,12 +25,18 @@ Quindi, sollecitando in ingresso il sistema con un ingresso sinusoidale si ottie
 - Quindi stessa frequenza (e diversa ampiezza)
 ![[Pasted image 20220610101020.png]]
 ![[Pasted image 20220610101129.png|400]]
+- Essendo $G$ un segnale reale, poi la $j$ va tolta dall'argomento!
 Comoda la formula finale perché per calcolare il regime permanente con ingresso sinusoidale mi basta applicare quella, senza calcolare esplicitamente l'antitrasformata
 - In particolare quella vista riguarda la risposta di $G(s)$ con ingresso un $\sin$ 
 	- Se avessimo il $\cos$ sarebbe: 
 	![[Pasted image 20220610102628.png|500]]
 
 **Nota:** $G(j\omega_{0})$ viene detta *risposta in frequenza* o risposta armonica
+
+> [!abstract] Approfondimento: Formula equivalente per sistemi SISO
+> La stessa formula per sistemi SISO si piò riscrivere come modulo e fase
+> ![[Pasted image 20220610112525.png|400]]
+
 ### TEOREMA DELLA RISPOSTA IN FREQUENZA (RIASSUNTIVO)
 - $G(s)$ priva di poli sull'asse immaginario perché così abbiamo poli distinti di sicuro (ipotesi fondamentale)
 - Stabilità esterna: poli con $\text{Re}<0$
@@ -47,7 +53,7 @@ Le formule scritte valgono anche per segnali multi ingresso e multi uscite
 >Se abbiamo un segnale che è la somma di tanti contributi a frequenza diverse, per il *principio di sovrapposizione degli effetti* si può calcolare il regime permanente in risposta a ciascuna frequenza e poi il regime permanente complessivo come somma dei vari contributi
 >	L'esempio al limite è il caso delle *serie di Fourier* in cui abbiamo infinite sinusoidi
 
-#### esempio: calcolo regime permanente in risposta a una combinazione lineare
+#### Esempio: calcolo regime permanente in risposta a una combinazione lineare
 Calcoliamo il regime permanente in risposta all'ingresso $$ u(t) = [3+\sin(2t)]\ 1(t) $$
 Con funzione $\displaystyle G(s) = \frac{1}{s^{2}+s+2}$
 ##### PASSI
@@ -57,7 +63,50 @@ Con funzione $\displaystyle G(s) = \frac{1}{s^{2}+s+2}$
 - Scompongo l'ingresso come somma di contributi e nomino ciascuno con un nome $u_{i}  \quad , \quad i=1,2,\dots,n \text{ contributi}$
 	- Così che il regime permanente è la somma dei singoli contributi: $y_{f}^{U}(t) = \sum_{i=1}^{n \text{ contributi}} y_{f}^{U_{i}}(t)$
 - Calcolo quindi i singoli regimi permanenti (a seconda se abbiamo in ingresso gradino o sinusoidi)
+	- Ricordandosi di non includere $j$ per la risposta a un segnale sinusoidale perché $G(\dots)$ è un segnale reale!
 - Metto insieme tutti i contributi come detto
 
 
 ![[Pasted image 20220610103821.png|500]]
+![[Pasted image 20220610112222.png|600]]
+Mettendo insieme:
+![[Pasted image 20220610112255.png|600]]
+
+---
+# ANALISI TD (TEMPO DISCRETO)
+## INTRO
+- Abbiamo equazioni alle differenze
+- Sappiamo già le soluzioni, ovvero l'evoluzioni nel tempo dello stato e dell'uscita
+	- *Stato*: Al posto dell'esponenziale di matrice abbiamo una potenza di matrice $A^{t}$ (che sarà da trovare ovviamente) per l'evoluzione libera e invece abbiamo una serie al posto dell'integrale nell'evoluzione forzata
+	- *Uscita*: Matrice $C$ che moltiplica lo stato nell'evoluzione libera e una sommatoria al posto dell'integrale per l'evoluzione forzata
+![[Pasted image 20220610113124.png|500]]
+
+## TRASFORMATA Z
+- Nei sistemi TC per capire l'evoluzione del sistema era necessario studiare l'esponenziale di matrice. Questo lo facevamo grazie alla trasformata di Laplace
+- Analogamente, in tempo discreto TD, procediamo analogamente utilizzando la **trasformata Zeta** (generalizza la trasformata di Fourier discreta)
+
+Definizione (dato segnale $f(t)$ causale):
+$$
+\boxed{f(t) \longleftrightarrow \sum_{t=0}^{\infty} f(t) z^{-t}=F(z)}
+$$
+con $z$ variabile complessa
+
+### PROPRIETA'
+- nota: in Laplace l'operatore di riferimento ($s$), equivaleva a un operatore di derivazione/integrazione. In Zeta invece l'operatore ($z$) è associato al ritardo/anticipo
+![[Pasted image 20220610113800.png|600]]
+- torna perché in tempo continuo abbiamo $\dot x(t)$, adesso invece $x(t+1)$
+*Quindi la trasformata Z serve per passare dalle equazioni alle differenze a equazioni algebriche*
+
+## RISPOSTA LIBERA E FORZATA IN Z
+Applicando le proprietà appena viste, si giunge facilmente alle soluzioni generali del sistema
+![[Pasted image 20220610114206.png|500]]
+Basta risolvere l'equazione algebrica ottenuta, isolando $X(z)$
+![[Pasted image 20220610114402.png|500]]
+Vale, ancora una volta la seguente:
+![[Pasted image 20220610114446.png|500]]
+- ovvero si può distinguere evoluzione libera e forza di ingresso e uscita, e la loro somma porta proprio a l'evoluzione complessiva
+
+## PARALLELO TEMPO-Z
+![[Pasted image 20220610114558.png|500]]
+- l'evoluzione forzata è come quella del tempo continuo solo che al posto di $s$ abbiamo $z$
+- l'evoluzione libera invece è la stessa solo che devo moltiplicare per $z$, questo per come è stata definita tale trasformata
