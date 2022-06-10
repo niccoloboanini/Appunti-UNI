@@ -58,8 +58,8 @@ Considerazioni importanti che mettono in collegamento quanto visto adesso con la
 
 ![[Pasted image 20220608175603.png|600]]
 Basta osservare il $\lim_{t \to 0} y_{\tiny f}(t)$:
-- Nel caso di **stabilità esterna abbiamo**: $y_{f}(t) = \cancelto{0}{y_{f}^{G}(t)}+y_{f}^{U}(t)$ >> la *risposta forzata* tende al regime permanente
-- Nel caso di **stabilità asintotica** invece: $y_(t) = \cancelto{0}{y_{\ell}(t)} + \cancelto{0}{y_{f}^{G}(t)}+{y_{f}^{U}(t)}$ >> la *risposta complessiva* tende al regime permanente
+- Nel caso di **stabilità esterna abbiamo**: $y_{f}(t) = \cancelto{0}{y_{f}^{G}(t)}+y_{f}^{U}(t)$ >> la *risposta forzata* tende al regime permanente (dato che ci rimane: $y_{(t)}=y_{\ell}(t)+y_{f}^{U}(t)$)
+- Nel caso di **stabilità asintotica** invece: $y_{(t)} = \cancelto{0}{y_{\ell}(t)} + \cancelto{0}{y_{f}^{G}(t)}+{y_{f}^{U}(t)}$ >> la *risposta complessiva* tende al regime permanente
 	- Perché se è stabile asintoticamente è anche stabile esternamente
 	- In più la risposta libera $\cancelto{0}{y_{\ell}(t)}$ 
 
@@ -97,13 +97,3 @@ basta calcolarla per $s=0$, ovvero: $\boxed{\left . G(s) \right |_{s=0} = G(s)}$
 	- Ad esempio con i metodi algebrici oppure calcolando i poli di $G(s)$
 - Posso scrivere eventualmente l'evoluzione asintotica della risposta forzata $\lim_{t \to \infty} y_{f}(t)$
 ![[Pasted image 20220609115928.png|600]]
-
-### SINUSOIDE
-- Leggermente più complesso perché abbiamo poli puramente immaginari nella trasformata
-	- Facendo il prodotto per calcolare $Y_{f}(s)$ otteniamo una funzione che va poi separata coi fratti semplici. In particolare ancora una volta, mi interessa solo l'addendo relativo all'ingresso ovvero $Y_{f}^{U}(s)$
-		- Siccome l'ingresso ha due poli, abbiamo due addendi e quindi due residui $\tilde K_{1}$ e $\tilde K_{2}$
-- Per trovare il regime permanente faccio l'antitrasformata dei due fratti semplici che mi interessano, così da ottenere appunto $y_{f}^{U}(s)$
-- Basta trovare uno dei due residui perché sono l'uno il complesso coniugato dell'altro
-*Tutto questo vale se $G(s)$ non ha poli in $\pm j \omega_0$* (sennò entra in risonanza)
-![[Pasted image 20220609120634.png|600]]
->> Otteniamo come regime permanente ancora una sinusoide di frequenza $\omega_{0}$
