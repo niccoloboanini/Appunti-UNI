@@ -124,6 +124,10 @@
     "bibo",
     " asintot",
     "set-point",
-    "regimen"
+    "regimen",
+    "reiettare",
+    "feedforward",
+    "ottenenere",
+    "lienare"
   ]
 }

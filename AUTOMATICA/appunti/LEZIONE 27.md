@@ -82,3 +82,120 @@ $$
 \large y_{f}(t) = \underbrace{t_{f}^{G^{*}}(t)}_{\text{spec. 3}} + \underbrace{y_{f}^{Y^{o}}(t)}_{\text{spec. 1,2}} = \mathcal{L}^{-1}\{ \underbrace{G^{*}_{y^{o}\ y}(s)}_{\text{spec. 3}} Y^{o}(s)\} 
 $$
 - l'obiettivo del controllo quindi sarà quello di assegnale alla funzione di trasferimento a ciclo chiuso una forma desiderata
+
+## ATTENUARE o REIETTARE I DISTURBI
+Se un sistema presenta dei disturbi $d$ come in figura, allora occorrono *nuove specifiche* per attenuare o reiettare completamente questi ultimi 
+![[Pasted image 20220610173601.png|400]]
+- nei sistemi reali $d$ è sempre presente 
+	- Esempio: aeroplano --> turbolenza: il controllore $\mathcal{C}$ cercherà di attenuare questi disturbi
+
+Agiscono quindi nel sistema due ingressi: $y^{o}$ e $d$ sul sistema a ciclo chiuso quindi l'andamento dell'uscita dipende da entrambi
+- A causa di questo infatti esistono due funzioni di trasferimento: $G^{*}_{y^{o}\ y}(s)$ e $G^{*}_{d\ y}(s)$
+	- Cioè una tra il riferimento e l'uscita e una tra il disturbo e l'uscita
+		- Essendo il sistema lineare ci si può concentrare su una delle due singolarmente
+
+
+# TECNICHE DI CONTROLLO: fase progettuale
+## RETROAZIONE ALGEBRICA SULLO STATO
+Supponiamo di avere informazione completa sullo stato (sistema di controllo in *informazione completa*), ovvero $w = x$
+![[Pasted image 20220610174816.png|200]]
+Quindi per ogni istante di tempo $t$ dobbiamo scegliere un $u$ opportuno, sulla base di $2$ ingressi: lo stato $x$ e il riferimento $y^{o}$. Quindi $u$ è una funzione di $2$ variabili: $$ u = \mathcal{C}(x,y^{o}) $$
+Supponiamo che venga generata una azione di controllo $u(t)$ *lineare*. Sarà allora della forma matrice per vettore:
+$$
+\mathcal{C}: \quad \boxed{u(t) = \underbrace{-Fx(t)}_{\text{feedback}} + \underbrace{Hy^{o}(t)}_{\text{feedforward}}}
+$$
+- Dove $F$ e $H$ sono matrici di dimensioni opportune 
+	- Il meno davanti a $F$ si inserisce per default (ma sarebbe indifferente come idea)
+Il controllo in $\text{feedback è pari a } -Fx(t)$ e dipende dallo stato $x$
+	- $F$ è il guadagno in feedback ed è una matrice $\dim(u) \times \dim(x)$
+Il controllo in $\text{feedforward è pari a } Hy^{o}(t)$ e dipende dal riferimento $y^{o}$
+	- $H$ è il guadagno in feedforward ed è una matrice $\dim(u) \times \dim(y)$
+![[Pasted image 20220610175519.png|500]]
+
+#### SISTEMI SISO ($\dim(u)=\dim(y)=1$)
+Per sistemi SISO:
+- $F$ è un vettore riga $F = [f_{1},f_{2}, \cdots,f_{n}]  \quad , \quad n = \dim(x)$
+	- (dato che lo stato è un vettore colonna $\begin{bmatrix} x_{1}  \\  \vdots  \\ x_{n} \end{bmatrix}$)
+- $H$ è uno scalare
+	- (dato che il riferimento è un valore)
+
+Risolvere un problema di controllo significa quindi determinare correttamente:
+$$ \underbrace{n}_{F}+\underbrace{1}_{H}  \quad \text{parametri di progetto} $$
+### EQUAZIONI DI STATO
+Si possono riscrivere le equazioni di stato del sistema a ciclo chiuso sulla base di quanto abbiamo detto (applicando cioè un determinato controllo $\mathcal{C}$), per rappresentarlo algebricamente
+
+- Sappiamo infatti che il controllo dovrà essere del tipo: $\mathcal{C} \to \  \{ u=-Fx+Hy^{o}$
+- Sostituiamo $u$ del controllo in $\begin{cases} \dot x = Ax +Bu  \\ y = Cx + \cancelto{0}{Du} \end{cases}$
+Ottenendo:
+- $\dot x = Ax+B(-Fx+Hy^{o}) = Ax-BFx+BHy^{o}=(A-BF)x+BHy^{o}$
+Quindi il problema a ciclo chiuso:
+$$
+\large \mathcal{P^{*}} = \begin{cases} \dot x = \overbrace{(A-BF)}^{\Large A^*}x +\overbrace{BH}^{\Large B^{*}}y^{o}  \\ y = Cx \end{cases}
+$$
+- Dove abbiamo rinominato le matrici che compaiono in $\dot x$ con $A^{*}$ e $B^{*}$
+
+> Quindi agendo sui parametri di progetto $F$ e $B$ si può modificare l'uscita del sistema $y^{o}$ a nostro piacimento rendendo addirittura in certi casi stabile un $\mathcal{P}$ che in origine non lo era. Questo lo possiamo fare in maniera più generale specificando la retroazione $u=-Fx+Hy^{o}$ che appunto modifica la dinamica del sistema
+
+![[Pasted image 20220610181833.png|550]]
+
+![[Pasted image 20220610181914.png|400]]
+- dove appunto abbiamo modificato le matrici $B$ e $A$. Quest'ultima in particolare è importante perché è quella che determina i modi di evoluzione del sistema (per fare un esempio)
+
+#### POLINOMIO CARATTERISTICO IN CICLO CHIUSO
+Se vogliamo agire sulla stabilità, dobbiamo gestire gli zeri del polinomio caratteristico $\varphi(s)$. Pertanto, si definisce *polinomio caratteristico in ciclo chiuso*, il seguente: $$ \varphi^{*}(s) =\det(sI-A^{*})=\det(sI-A+BF) $$
+perché appunto è cambiata la matrice $A$
+- notiamo che qui entra in gioco solo la matrice $F$. Ci possiamo aspettare che inserendo determinati valori in essa, vadano a variare sul piano $s$ i poli di $\varphi(s)^{*}$, e dunque le condizioni di stabilità
+	- Quindi: agire su $F \approx$ spostare gli autovalori 
+
+#### FUNZIONE TRASFERIMENTO IN CICLO CHIUSO
+Analogamente, definiamo la *funzione di trasferimento in ciclo chiuso* come:
+$$
+G_{y^{o}\ y}^{*}(s) = C(sI-A^{*})^{-1}B^{*}=C(sI-A+BF)^{-1}BH
+$$
+- agendo (anche) su $H$, possiamo ottenenere uno specifico guadagno del sistema a ciclo chiuso
+
+> [!important] Formule per sistemi SISO (da usare negli esercizi)
+> Si dimostra che la funzione di trasferimento a ciclo chiuso si calcola come:  $$ \boxed{G_{y^{o}\ y}^{*}(s) = \frac{r(s)}{\varphi(s)^{*}}\cdot H} $$
+> Dove $r(s)$ è lo stesso di un sistema generico LTI TC lineare, ovvero $$ r(s)=C Adj(SI-A)\cdot B $$
+> 	In pratica $r(s)$ *non dipende da $F$* (cioè se calcolassi $r(s)$ in un sistema a ciclo chiuso otterrei comunque gli stessi valori)
+> 	Nel caso generale di sistema LTI TC lineare (ad anello aperto), abbiamo: $G(s)=\frac{r(s)}{\varphi(s)}$
+> 	Quindi varia soltanto il polinomio caratteristico ($\varphi(s)\to \varphi(s)^{*}$) e poi la successiva moltiplicazione per $H$
+> 		Infatti dipende come detto da $F$ che è all'interno di $\varphi(s)^{*}$ che mi determinano i poli del polinomio caratteristico e $H$ (costante moltiplicativa) che determina il guadagno per un sistema a ciclo chiuso
+![[Pasted image 20220610183725.png|600]]
+
+- **Nota:** la retroazione algebrica (feedback) modifica sullo stato i poli (perché influenza $(\varphi(s)^{*})$) ma non modifica gli zeri della funzione di trasferimento $G_{y^{o}\ y}^{*}(s)$
+
+## PROGETTO
+Dobbiamo soddisfare le $3$ specifiche
+
+#### SPECIFICA 1 e 3
+(spec.1)Basta che il "nuovo" polinomio caratteristico abbia tutte radici con $\text{Re}<0$ in modo tale che sia *asintoticamente stabile*
+(spec.3)Dato che vogliamo anche garantire  un transitorio rapido con escursioni limitate dovremo *posizionare i poli di $\varphi(s)^{*}$ in modo opportuno* (vedi lezioni successive)
+$$
+\varphi^{*}(s) = \det(sI-A+BF)  \quad , \quad \text{con Re}<0 \text{ e posizionate adeguatamente}
+$$
+(sono specigiche: pole placement, perché legate direttamente alla posizione dei poli sul piano complesso - in particolare nel semipiano sinistro perché li vogliamo asintoticamente stabili)
+#### SPECIFICA 2
+Dobbiamo avere un *guadagno in continua in ciclo chiuso tale che sia unitario*, ovvero deve valere:
+$$
+G_{y^{o}\ y}^{*}(s)|_{s=0} = G_{y^{o}\ y}^{*}(0)= 1
+$$
+Essendo come detto:
+$$
+G_{y^{o}\ y}^{*}(s) = \frac{r(s)}{\varphi^{*}(s)}\cdot H
+$$
+Allora deve valere:
+$$
+G_{y^{o}\ y}^{*}(s)|_{s=0} = G_{y^{o}\ y}^{*}(0) = \frac{r(0)}{\varphi^{*}(0)}\cdot H = 1
+$$
+Quindi basta porre:
+$$
+H = \frac{\varphi^{*}(0)}{r(0)}
+$$
+Cosicché:
+$$
+G_{y^{o}\ y}^{*}(0) = \frac{r(0)}{\varphi^{*}(0)}\cdot \frac{\varphi^{*}(0)}{r(0)} = 1 $$
+##### RIASSUMENDO
+![[Pasted image 20220610185836.png|500]]
+Prima progetto $F$ poi $H$
+- Poi ho fatto perché posso determinare il giusto $u=-Fx+Hy^{o}$
