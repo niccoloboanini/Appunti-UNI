@@ -108,6 +108,42 @@ In particolare:
 ---
 ---
 
-# *SISTEMI DI CONTROLLO*
+# **SISTEMI DI CONTROLLO**
 - Far comportare un sistema in un modo desiderato
+- Lo vediamo solo per il tempo continuo e per sistemi lineari (ma vale anche lo stesso per il tempo continuo e per i sistemi non lineari nell'intorno dei punti di equilibrio)
 
+Il sistema da controllare si chiama impianto o processo ($\mathcal{P}$)
+ $$
+\mathcal{P}: \begin{cases} \dot x(t) = Ax(t) +Bu(t)  \\ y(t) = Cx(t) + \cancelto{0}{Du(t)} \end{cases}
+$$
+- Ipotizzando $D = 0$ (perché il controllo non può influenzare l'uscita $y$ istantaneamente, ma andremo ad agire sull'ingresso e poi dopo un certo ritardo l'uscita viene influenzata anche con quello che abbiamo dato in ingresso)
+
+- Lo *scopo* del controllo è quello di *agire sul sistema mediante il segnale di controllo/ingresso $u$, in modo tale che l'andamento in uscita del sistema (valore delle variabili che vogliamo controllare) sia il più vicino possibile al segnale $y^{0}$ detto di riferimento*
+	- $y-y^{0}$ viene detto **errore d'inseguimento**. L'obiettivo è renderlo il più piccolo possibile
+
+
+- La classe di problemi che auspica a una uscita di riferimento pari a zero, ovvero $y^{0}=0 \ \ \forall t$ viene chiamata *problema di regolazione a zero*. Si raggiunge uno stato di *quiete*
+- Gli altri problemi sono invece *problemi d'inseguimento*, in cui si cerca di controllare il sistema per ottenere un riferimento $y^{0}(t)$ generico, non nullo. Esso rappresenta la *traiettoria desiderata del sistema*
+	- Ci occuperemo di questi solo parlando dei *problemi d'inseguimento con riferimento costante*, ovvero tali che $$ y^{0}(t) = Y_{0} \cdot 1(t) $$
+	- che è un riferimento a gradino (costante). Vogliamo cioè portare l'uscita a un valore costante (esempio: cruise control/termostato...)
+	- $Y_{0}$ è detto **set-point**, e rappresenta il valore/valori a cui vogliamo portare l'uscita (velocità macchina, temperatura della stanza...)
+
+## CONTROLLO IN ANELLO APERTO :(
+Si predetermina un segnale di ingresso $u$ sulla base delle esigenze $y^{0}$ e lo si applica al sistema.
+- Non si controlla più: si suppone che non ci siano disturbi anche imprevisti che potrebbero interferire con l'ingresso scelto. Modello per questo in un certo senso *ideale*
+![[Pasted image 20220610155932.png|400]]
+
+- Sarebbe un po' come impostare a priori il miscelatore della doccia in una certa posizione "sperando" che poi l'acqua sia alla temperatura desiderata.
+	- Con il controllo in retroazione invece avremmo la possibilità di regolare la manopola sulla base di com'è la temperatura in un certo istante (la porto verso destra se l'acqua e calda e viceversa - in tal caso $w$ sono i sensi sulla pelle che misurano la temperatura)
+
+## CONTROLLO IN RETROAZIONE :)
+ **Feedback control**
+ Tengo conto in tempo reale del comportamento del sistema.
+ - Suppongo di conoscere le variabili $w$ che danno informazioni sulla configurazione del sistema in un certo istante $t$.
+ - Quindi l'azione del controllo $u$ non è predeterminata, ma è generata in ogni istante di tempo sulla base dei dati forniti da $\mathcal{P}$ con il **vettore informativo $w$**
+ ![[Pasted image 20220610160350.png|400]]
+- detto anche controllo in *catena aperta* (ad anello)
+
+Se il vettore informativo coincide con l'intero stato, allora si parla di *controllo in retroazione sullo stato*. Abbiamo una informazione completa dello stato (conosco tutto quello che sta succedendo in $\mathcal{P}$) $$ \boxed{w(t) = x(t)}  \quad \to \quad \text{controllo in retroazione sullo stato} $$
+Se invece abbiamo a disposizione solo una parte delle variabili, guardiamo il caso in cui conosciamo solo l'uscita di $\mathcal{P}$. Si parla perciò di *controllo in retroazione sull'uscita*. Abbiamo quindi solo una informazione parziale di quello che sta succedendo $$  \boxed{w(t) = y(t)}  \quad \to \quad \text{controllo in retroazione sull'uscita}  $$
+- Non posso guardare cosa succede dentro $\mathcal{P}$, ma guardo solo cosa esce ovvero $y$.
