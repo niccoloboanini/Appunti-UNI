@@ -96,13 +96,13 @@ Agiscono quindi nel sistema due ingressi: $y^{o}$ e $d$ sul sistema a ciclo chiu
 
 
 # TECNICHE DI CONTROLLO: fase progettuale
-## RETROAZIONE ALGEBRICA SULLO STATO
+## 1° Tecnica: RETROAZIONE ALGEBRICA SULLO STATO
 Supponiamo di avere informazione completa sullo stato (sistema di controllo in *informazione completa*), ovvero $w = x$
 ![[Pasted image 20220610174816.png|200]]
 Quindi per ogni istante di tempo $t$ dobbiamo scegliere un $u$ opportuno, sulla base di $2$ ingressi: lo stato $x$ e il riferimento $y^{o}$. Quindi $u$ è una funzione di $2$ variabili: $$ u = \mathcal{C}(x,y^{o}) $$
 Supponiamo che venga generata una azione di controllo $u(t)$ *lineare*. Sarà allora della forma matrice per vettore:
 $$
-\mathcal{C}: \quad \boxed{u(t) = \underbrace{-Fx(t)}_{\text{feedback}} + \underbrace{Hy^{o}(t)}_{\text{feedforward}}}
+\large \text{Legge di controllo (}\mathcal{C}): \quad \boxed{u(t) = \underbrace{-Fx(t)}_{\text{feedback}} + \underbrace{Hy^{o}(t)}_{\text{feedforward}}}
 $$
 - Dove $F$ e $H$ sono matrici di dimensioni opportune 
 	- Il meno davanti a $F$ si inserisce per default (ma sarebbe indifferente come idea)
@@ -155,7 +155,7 @@ $$
 - agendo (anche) su $H$, possiamo ottenenere uno specifico guadagno del sistema a ciclo chiuso
 
 > [!important] Formule per sistemi SISO (da usare negli esercizi)
-> Si dimostra che la funzione di trasferimento a ciclo chiuso si calcola come:  $$ \boxed{G_{y^{o}\ y}^{*}(s) = \frac{r(s)}{\varphi(s)^{*}}\cdot H} $$
+> Si dimostra che la funzione di trasferimento a ciclo chiuso si calcola come:  $$ \boxed{G_{y^{o}\ y}^{*}(s) = \frac{r(s)}{\varphi^{*}(s)}\cdot H} $$
 > Dove $r(s)$ è lo stesso di un sistema generico LTI TC lineare, ovvero $$ r(s)=C Adj(SI-A)\cdot B $$
 > 	In pratica $r(s)$ *non dipende da $F$* (cioè se calcolassi $r(s)$ in un sistema a ciclo chiuso otterrei comunque gli stessi valori)
 > 	Nel caso generale di sistema LTI TC lineare (ad anello aperto), abbiamo: $G(s)=\frac{r(s)}{\varphi(s)}$
@@ -164,6 +164,7 @@ $$
 ![[Pasted image 20220610183725.png|600]]
 
 - **Nota:** la retroazione algebrica (feedback) modifica sullo stato i poli (perché influenza $(\varphi(s)^{*})$) ma non modifica gli zeri della funzione di trasferimento $G_{y^{o}\ y}^{*}(s)$
+- Quando si vede l'asterisco è da leggere come "a ciclo chiuso". Ad esempio: polinomio caratteristico a ciclo chiuso $\to \varphi(s)^{*}$
 
 ## PROGETTO
 Dobbiamo soddisfare le $3$ specifiche
