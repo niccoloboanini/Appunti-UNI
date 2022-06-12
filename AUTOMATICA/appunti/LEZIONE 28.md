@@ -84,6 +84,7 @@ Abbiamo un termine che *dipende dalla posizione* (in particolare dalla differenz
 		- Per la specifica $1$ è più complicato, e bisogna parlare di *controllabilità* (vedi dopo)
 
 # CONTROLLABILITA' E STABILIZZABILITA'
+- Non sempre il progetti si può fare: dipende dalle proprietà di controllabilità è stabilizzabilità del sistema
 ### ESEMPIO 1 - sistema STABILIZZABILE
 ##### COMMENTI
 - Il sistema inizialmente è internamente instabile, infatti il polinomio caratteristico "ad anello aperto" ha zeri (che sono gli autovalori) non tutti con parte reale minore di zero (ne ha uno che vale $+2$ addirittura)
@@ -98,6 +99,7 @@ Abbiamo un termine che *dipende dalla posizione* (in particolare dalla differenz
 ![[Pasted image 20220611180706.png|600]]
 - Dato che l'autovalore controllabile è relativo proprio all'autovalore di partenza con $\text{Re}>0$, allora con opportuni valori ($f_{1}>2$) si può rendere l'autovalore con parte reale negativa, così da *rendere il sistema stabile*. 
 	- Quando questo è possibile il **sistema si dice stabilizzabile**, perché con il controllo posso agire sulla stabilità del sistema stesso (modificando i valori degli autovalori)
+	- Stabilizzabile: tutti gli autovalori non controllabili hanno $\text{Re}<0$ (accade quando $\varphi_{\text{nc}}(s)$ è asintoticamente stabile)
 
 ### ESEMPIO 2 - sistema NON STABILIZZABILE
 - Analogo al precedente come procedimento (infatti cambia solo un elemento della matrice $A$)
@@ -160,9 +162,11 @@ La parte invece controllabile $\mathcal{S}_{c}$ ha come autovalori gli autovalor
 ![[Pasted image 20220611184735.png|600]]
 **La risposta forzata ha come unico polo rimanente quello controllabile** (possono essere eventualmente di più)
 - Gli autovalori non controllabili spariscono (si cancellano) --> sono gli *autovalori nascosti del sistema*
+	- La semplificazione avviene a causa della moltiplicazione per $B$ (che fa rimanere solo l parte controllabile) [più avanti vedremo che possiamo avere semplificazioni anche moltiplicando per C]
 ### GENERALIZZAZIONE e CALCOLO POLINOMIO CARATTERISTICO DI CONTROLLO
 **I poli controllabili del sistema sono i poli di $(sI-A)^{-1}B$**
 ![[Pasted image 20220611185227.png]]
+**Nota:** (come c'è scritto) gli autovalori non controllabile che scompaiono nel calcolo di $\varphi_{\text{nc}}(s)$ a causa della moltiplicazione per $B$, non si presentano nemmeno in $G(s)=C(sI-A)^{-1}B$
 
 #### NELL'ESEMPIO PRECEDENTE
 ![[Pasted image 20220611185300.png|300]]
