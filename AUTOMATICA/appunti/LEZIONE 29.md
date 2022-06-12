@@ -56,4 +56,34 @@
 Infine, dimostriamo che non abbiamo semplificazioni per gli altri valori non considerati di $\alpha$, quindi i casi in cui abbiamo completa controllabilità e quindi stabilizzabilità
 ![[Pasted image 20220612121255.png|500]]
 
-#minuto_11_lezione_29_parte_2
+# RAGGIUNGIABILITA'
+- Metodo utile poi per capire quando si perde di controllabilità
+
+Per ora, definiamo la raggiungibilità come l'insieme di **proprietà** tali per cui, se applicate opportunamente sul sistema, permettono attraverso un certo **controllo $u$** di **portare lo stato iniziale** del sistema nullo $x(0)=0$ **a un certo stato specifico** che si desidera $x(t) = x^{\text{o}}$
+ > Si cerca in altre parole di capire se esiste un certo segnale di controllo $u$ che porta lo stato del sistema a un certo valore desiderato di "obiettivo" $x^{\text{o}}$
+ ![[Pasted image 20220612162502.png|200]]
+- esempio: braccio robotico --> portare l'oggetto in una certa posizione desiderata in un certo lasso di tempo
+
+Dato che le condizioni iniziali le supponiamo nulle, allora l'evoluzione dello stato $x(t)$ dipende solo  dalla risposta forzata $x_{f}(t)$, perché ($x_{\ell}(t)$ dipende dalle sole condizioni iniziali). Ovvero:
+$$
+x(t) = \cancelto{0}{x_\ell(t)}+x_{f}(t)
+$$
+Quindi:
+$$
+x(t) = x_{f}(t) = \int_{0}^{t} e^{A(t-\tau)} B \ u(\tau) \,d\tau
+$$
+> Conviene per la raggiungibilità di ragionare nel tempo. Altrimenti in Laplace avremmo $X_{f}(t) = (sI-A)^{-1}B \ U(s)$, come abbiamo visto per la stabilità. Tuttavia come vedremo conviene rimanere nel tempo
+
+
+
+### ESEMPIO DI APPLICAZIONE
+- Applicare le proprietà di raggiungibilità per capire se possiamo portare il sistema complessivo (lo stato di tutti gli agenti) a un valore desiderato
+	- Ad esempio nella dinamica delle opinioni potremmo pensare a una campagna di marketing (che può influenzare anche un sottoinsieme di agenti - ovvero i nodi del grado) tale per cui lo stato complessivo raggiunga un valore di riferimento (ad esempio uno stato di fiducia verso un brand che faccia fare più acquisti)
+![[Pasted image 20220612163538.png|500]]
+	- Nel caso ci si regola a mano a mano, aumentando ad esempio il numero di ingressi $u_{i}$ per influenzare più persone
+
+- L'esempio inverso può essere quello di agire in maniera malevola sullo stato degli agenti per capire la robustezza del sistema (usato in cyber-security)
+	- Utile per progettare poi un sistema più sicuro
+
+### STATI RAGGIUNGIBILI
+- Indicati con $X_{r}$: sono tutti quegli stati che possono essere raggiunti mediante il controllo (è un sottoinsieme degli stati)
