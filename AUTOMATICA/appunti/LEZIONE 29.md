@@ -85,5 +85,63 @@ $$
 - L'esempio inverso può essere quello di agire in maniera malevola sullo stato degli agenti per capire la robustezza del sistema (usato in cyber-security)
 	- Utile per progettare poi un sistema più sicuro
 
-### STATI RAGGIUNGIBILI
-- Indicati con $X_{r}$: sono tutti quegli stati che possono essere raggiunti mediante il controllo (è un sottoinsieme degli stati)
+## STATI RAGGIUNGIBILI
+- Indicati con $X_{r}$: sono tutti quegli stati che possono essere raggiunti mediante il controllo (è un sottoinsieme degli stati se il sistema non è completamente raggiungibile, altrimenti è coincidente con l'insieme generico degli stati $\mathbb{R}^{n}$)
+	- Nota: se il sistema è completamente raggiungibile, allora applicando l'opportuno controllo si può raggiungere qualsiasi stato
+![[Pasted image 20220612164251.png|600]]
+
+
+## ESEMPIO
+![[Pasted image 20220612164951.png|300]]
+Partiamo da un sistema già visto non completamente controllabile
+	- Si vede che non è nemmeno completamente raggiungibile, infatti *esiste una equazione di stato che non dipende dal controllo*, quindi per capire come si evolve si risolve l'equazione differenziale associata e si nota che non dipende dal controllo
+		- Nel dettaglio: $$ \dot x_{2} = -x_{2} \quad \text{ha soluzione } x_{2}(t) = e^{-t}x_{2}(0) $$ si vede che il controllo non influisce. Se partiamo con condizioni iniziali nulle, ovvero $x_{0}=\begin{bmatrix} x_{1}(0) \\ x_{2}(0)  \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} \Rightarrow$  $x_{2}(0)=0$ allora $x_{2}(t) =0 \ \ \forall t$
+		- Quindi la seconda componente dello stato non si muove da $0$. Partendo dallo stato $x(0)=0$ non posso raggiungere stati $x_{2}(t)\neq 0$
+- Con il controllo posso modificare $x_{1}$ ma non $x_{2}$ (quindi mi muovo solo sulla retta orizzontale in figura)
+![[Pasted image 20220612164927.png]]
+
+- Ne deriva che l'insieme degli stati raggiungibili è $$ X_{r} = \bigg\{ \begin{bmatrix}\beta  \\ 0 \end{bmatrix}  \text{ con } \beta \in \mathbb{R} \bigg\}$$
+- Quindi $X_{r}$ coincide con un *sottospazio lineare* dello spazio $\mathbb{R}^{x_{1}\times x_{2}}$ coincidente con la sola retta $x_{1}$
+
+
+### CAPIRE SE UN SISTEMA È O MENO COMPLETAMENTE RAGGIUNGIBILE
+- Caso semplice: c'è una equazione di stato che non dipende dal controllo
+- Caso più complesso: devo analizzare matematicamente com'è fatta la risposta forzata nel tempo $x_{f}(t)$
+
+Infatti:
+Partendo da: $x_{f}(t^{o}) = \int_{0}^{t^{o}} e^{A(t-\tau)}B \ u(\tau) \,d \tau$
+Ci chiediamo quali stati possiamo raggiungere a partire da questo stato in un certo tempo $t^{o}$. Possiamo riscrivere l'esponenziale di matrice come serie di Taylor:
+$$
+e^{At} = \sum_{k=0}^{\infty} \frac{(At)^k}{k!}
+$$
+Quindi:
+$$
+x_{f}(t^{o}) = \int_{0}^{t^{o}} \sum_{k=0}^{\infty} \frac{(A)^k(t^{o}-\tau)^{k}}{k!} B \ u(\tau) \,d \tau
+$$
+Portando fuori quello che non dipende dall'integrale:
+$$
+x_{f}(t) = \sum_{k=0}^{\infty} A^{k}B \ \underbrace{\int_{0}^{t^{o}} \frac{(t^{o}-\tau)^{k}}{k!} u(\tau) \,d\tau}_{\Large u_{k}(t^{o})}
+$$
+- dove con $u_{k}(t^{o})$ abbiamo individuato il *momento k-esimo* di $u(t)$ al tempo $t^{o}$
+	- È la parte della risposta forzata che  *dipende dal controllo*. Ovvero al variare di $u$ abbiamo coefficienti arbitrari (che possiamo scegliere con il controllo)
+Ci rimane, sviluppando la sommatoria (ricordando che per $k=0$ l'esponenziale di matrice diventa l'identità):
+$$
+x_{f}(t) = B \ u_{0}(t^{o}) + AB \ u_{1}(t^{o})+ A^{2}B \ u_{2}(t^{o})+ \dots
+$$
+	- Una combinazione lineare di termini *arbitrari* $u_{0}(t^{o}), u_{1}(t^{o}),u_{2}(t^{o}),\dots$ 
+Questi rappresentano tutti gli stati raggiungibili attraverso la combinazione lineare tra i vettori (termini arbitrari) di controllo appena citati ($u_{0}(t^{o}), u_{1}(t^{o}),u_{2}(t^{o}),\dots$) e le quantità $A,AB,A^{2}B,\dots$
+
+Dal teorema di Cayley-Hamilton, tutte le potenze della matrice $A$ da un certo ordine $n$ in poi ($A^{n},A^{n+1},\dots$) sono riscrivibili come *combinazione lineare delle precedenti*, ovvero $I,A,A^{2},\dots,A^{n-1}$
+Quindi: 
+$$
+A^{k}  \quad , \quad k \geq n \quad \text{è scrivibile come combo lineare di } A^{0}=I,A,A^{2},\dots,A^{n-1}
+$$
+Allora anche:
+$$
+A^{k}B  \quad , \quad k \geq n \quad \text{è scrivibile come combo lineare di } B,AB,A^{2}B,\dots,A^{n-1}B
+$$
+
+> Quindi si conclude che uno stato è raggiungibile solo se è scrivibile come combinazione lineare dei primi $n$ vettori del tipo $B,AB,A^{2}B,\dots,A^{n-1}B$, grazie al Teorema di Cayley-Hamilton. Se non esiste una combinazione lineare opportuna per riscrivere lo stato, allora tale stato non è raggiungibile e quindi il sistema non è completamente raggiungibile (almeno)
+
+Mettendo insieme tali vettori nelle cosiddetta *matrice di raggiungibilità*, si capisce molto rapidamente quali stati del sistema sono raggiungibili e quali no
+
