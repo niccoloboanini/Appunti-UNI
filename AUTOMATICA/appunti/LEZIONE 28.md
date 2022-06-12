@@ -84,3 +84,87 @@ Abbiamo un termine che *dipende dalla posizione* (in particolare dalla differenz
 		- Per la specifica $1$ è più complicato, e bisogna parlare di *controllabilità* (vedi dopo)
 
 # CONTROLLABILITA' E STABILIZZABILITA'
+### ESEMPIO 1 - sistema STABILIZZABILE
+##### COMMENTI
+- Il sistema inizialmente è internamente instabile, infatti il polinomio caratteristico "ad anello aperto" ha zeri (che sono gli autovalori) non tutti con parte reale minore di zero (ne ha uno che vale $+2$ addirittura)
+- Ci calcoliamo così il polinomio caratteristico a ciclo chiuso:
+	- Calcoliamo la matrice $A^{*}=A-BF$ della dinamica in ciclo chiuso
+		- Nota: $F$ è un vettore riga di dimensione $2$, perché la matrice $A$ di partenza è $2 \times 2$
+	- Calcolo $\varphi(s)^{*}$ 
+- Osserviamo gli autovalori ottenuti con il controllo
+	- Notiamo che solo uno dei due autovalori può essere "corretto"/modificato. Esso lo chiameremo *autovalore controllabile*
+		- L'altro è non controllabile perché non posso modificarlo
+			- Per questo il sistema si dice *non completamente controllabile* (a differenza per esempio del carrello)
+![[Pasted image 20220611180706.png|600]]
+- Dato che l'autovalore controllabile è relativo proprio all'autovalore di partenza con $\text{Re}>0$, allora con opportuni valori ($f_{1}>2$) si può rendere l'autovalore con parte reale negativa, così da *rendere il sistema stabile*. 
+	- Quando questo è possibile il **sistema si dice stabilizzabile**, perché con il controllo posso agire sulla stabilità del sistema stesso (modificando i valori degli autovalori)
+
+### ESEMPIO 2 - sistema NON STABILIZZABILE
+- Analogo al precedente come procedimento (infatti cambia solo un elemento della matrice $A$)
+	- Abbiamo un sistema con autovalori entrambi instabili
+	- Proviamo allora ad applicare il controllo (cambia solo un elemento alla fine)
+	- Calcolo anche il polinomio caratteristico a ciclo chiuso
+![[Pasted image 20220611180735.png|500]]
+![[Pasted image 20220611175039.png|600]]
+- Seppur abbia la possibilità di controllare un autovalore (e quindi rendere esso stabile), rimangono altri autovalori che non si possono in nessun modo controllare (quindi rimangono autovalori con $\text{Re}>0$ che rendono il sistema instabile nonostante il controllo)
+	- In questi casi si parla di **sistema non stabilizzabile**: non esiste alcun guadagno in feedback $F$ tale da rendere il sistema in ciclo chiuso stabile (*esistono dei valori instabili non controllabili*)
+![[Pasted image 20220611175405.png|200]]
+
+
+## DEFINIZIONI
+
+### AUTOVALORE CONTROLLABILE E NON
+![[Pasted image 20220611175816.png]]
+- Nota sulla penultima cosa: gli autovalori se controllabili li posso posizionare a piacere ma se sono complessi compaiono coniugati e li devo spostare "a coppia"
+- Nota sulla cosa finale: dipende dalla matrice $A$ e dalla matrice $B$, quest'ultima mi dice infatti come il controllo agisce sul sistema (era comunque ovvio osservando che in $\varphi(s)^{*}$ compaiono entrambe le matrici citate)
+
+
+### POLINOMIO CARATTERISTICO DI CONTROLLO
+Dato che abbiamo partizionato l'insieme degli autovalori in due parti (controllabili e non controllabili), allora possiamo suddividere anche il polinomio caratteristico in due sotto-polinomi:
+$$
+\large \varphi(s) = \varphi_{c}(s) \ \varphi_{\text{nc}}(s)
+$$
+Dove:
+![[Pasted image 20220611180804.png]]
+![[Pasted image 20220611181204.png|600]]
+
+ ## STABILIZZABILITA'
+ ![[Pasted image 20220611181252.png|600]]
+#### STUDIO DELLA CONTROLLABILITà / STABILIZZABILITà
+- Negli esempi visti studiavamo il polinomio caratteristico in ciclo chiuso e sulla base della fattorizzazione di esso si individuavano gli zeri e si concludeva a secondo di quanto valeva la parte reale sulla stabilità.
+	- Questo metodo funziona per casi specifici e relativamente semplici, come nell'esempio $2$ qui riportato:
+	![[Pasted image 20220611181825.png|500]]
+	- In generale però non sempre viene un polinomio facilmente "gestibile" a livello di ricerca degli zeri (autovalori).
+- Per tali ragioni esiste quella che si chiama **parte controllabile del sistema**, che si può calcolare facilmente (calcolo matriciale: $(sI-A)^{-1}\ B$)
+![[Pasted image 20220611182043.png]]
+
+## PARTE CONTROLLABILE
+
+### ESEMPIO: prendiamo un sistema non completamente controllabile
+- Calcoliamo il polinomio caratteristico $\varphi(s)$ e individuiamo gli autovalori controllabili del sistema
+- Operazione inversa a quello che si fa di solito: si passa dalle matrici alle equazioni di stato (ricordando che la prima componente $\dot x_{i}$ è quella associata alla i-esima riga delle matrici $A$ e $B$)
+- Si associa la i-esima equazione di stato all'i-esimo autovalore: se quest'ultimo è controllabile, allora l'equazione di stato rientra nel *sottosistema controllabile $\mathcal{S}_{c}$*
+	- Se l'autovalore è non controllabile, allora l'equazione rientra in *$\mathcal{S}_{\text{nc}}$, sottosistema non controllabile*, perché evolve indipendentemente dal controllo
+![[Pasted image 20220611183518.png|600]]
+
+### DIAGRAMMA A BLOCCHI
+Come si nota dal diagramma a blocchi, $\mathcal{S}_{\text{nc}}$ non ha ingressi, perché tanto non è controllabile (evolve *autonomamente*) 
+- Pertanto la risposta forzata, che dice come l'ingresso influenza lo stato (e vale nel dominio di Laplace $X_{f}(s) = (sI-A)^{-1} Bu(s)$), non è influenzata da $\mathcal{S}_{\text{nc}}$.
+
+La parte invece controllabile $\mathcal{S}_{c}$ ha come autovalori gli autovalori controllabili ed è per questa ragione *influenzata dal controllo* (e quindi è non autonoma)
+![[Pasted image 20220611184318.png|600]]
+
+### ESEMPIO DI SCOMPOSIZIONE PARTE CONTROLLABILE E NON
+- Nella risposta forzata si vede solo la parte controllabile
+
+![[Pasted image 20220611184735.png|600]]
+**La risposta forzata ha come unico polo rimanente quello controllabile** (possono essere eventualmente di più)
+- Gli autovalori non controllabili spariscono (si cancellano) --> sono gli *autovalori nascosti del sistema*
+### GENERALIZZAZIONE e CALCOLO POLINOMIO CARATTERISTICO DI CONTROLLO
+**I poli controllabili del sistema sono i poli di $(sI-A)^{-1}B$**
+![[Pasted image 20220611185227.png]]
+
+#### NELL'ESEMPIO PRECEDENTE
+![[Pasted image 20220611185300.png|300]]
+
+>*in questo modo si stabilisce con un metodo preciso quali sono gli autovalori controllabili e quali no, e capire così se il sistema è stabilizzabile oppure no*
