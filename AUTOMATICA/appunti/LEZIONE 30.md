@@ -96,3 +96,72 @@ $$
 ![[Pasted image 20220613160256.png|500]]
 
 ---
+# RISPOSTA AL GRADINO
+
+## INTRO
+Sappiamo che per garantire la *specifica $3$* bisogna mantenere una transitorio rapido e con escursioni/oscillazioni limitate il più possibile
+- Queste sono espresse in termini di risposta al gradino in ciclo chiuso, infatti abbiamo questa situazione:
+![[Pasted image 20220613163601.png|200]]
+
+Per ottimizzare al meglio il fenomeno, si deve studiare (dal punto di vista soprattutto algebrico) com'è fatta la risposta al gradino in ciclo chiuso, ovvero:
+![[Pasted image 20220613163717.png|600]]
+
+Dove:
+$$
+G_{y^{o}\ y}^{*}(s) = \frac{r(s)}{\varphi^{*}(s)}
+$$
+- $r(s)$ è un polinomio dato dipendente da $A,B,C$ e che quindi non si può modificare
+- $H$ è un guadagno già scelto per garantire le specifiche, che quindi anch'esso non va toccato
+- *Posso agire solo su $\varphi^{*}(s)$ per garantire alla risposta al gradino un comportamento desiderato nel transitorio*
+		- in particolare i relativi zeri che poi diventano i poli di $G_{y^{o}\ y}^{*}(s)$
+
+Ricordiamo
+$$
+\varphi^{*}(s) = \det(sI-A+BF)
+$$
+- Come si nota dipende da $F$, quindi dobbiamo scegliere un adeguato valore del guadagno in feedback per garantisce un transitorio come desideriamo (asintoticamente stabile e rapido)
+
+### ESEMPIO: soddisfare la specifica nel transitorio
+- Progettiamo l'intero progetto per soddisfare le $3$ specifiche ($u=-Fx+Hy^{o}$)
+
+- Verifichiamo se posso farlo calcolando $\mathcal{R}$ e il relativo determinante per capire se è completamente raggiungibile e controllabile. Se questo è possibile mediante $F$ possiamo assegnare tutti gli autovalori come vogliamo
+- Calcolo $\varphi^{*}(s)$
+	- Quindi devo trovare $A^{*}$
+	- Si nota se abbiamo fatto i conti giusti che il polinomio finale dipende dai parametri $f_{i}$, quindi possiamo agire sui relativi autovalori
+- Calcolo $G_{y^{o}\ y}^{*}(s)$ per poi garantirli una forma desiderata
+	- In particolare devo calcolare $r(s)$
+![[Pasted image 20220613165637.png|600]]
+- Fattorizzo se possibile
+- Il numeratore a differenza del denominatore non si può scegliere come si vuole, però se riesco a fattorizzare il denominatore in modo adeguato, magari riesco a fare una semplificazione tra numeratore e denominatore per rendere poi lo studio più leggero
+	- Per fare ciò, fattorizzo il denominatore per garantire semplificazioni (tanto gli $f_{i}$ li posso scegliere)
+		- In particolare, dato che il polinomio è personalizzabile, scelgo autonomamente le radici (una di queste mi permette la semplificazione), assegnando un valore che voglio a $a_{0}^{*}$ (in questo esempio $10$) --> si fa tanti fattori quanto è il grado del denominatore (in questo caso due)
+			- Se facciamo il prodotto, si evince quanto valgono $f_{i}$
+- Riscrivo $G_{y^{o}\ y}^{*}(s)$ ora semplificata
+- Rimane solo il termine $H$ che lo scelgo appositamente per avere un guadagno in continua unitario (specifica $2$: $G_{y^{o}\ y}^{*}(0)=1$)
+![[Pasted image 20220613170726.png|650]]
+
+Abbiamo inoltre anche la risposta forzata in ciclo chiuso
+- Facendo la scomposizione in fratti semplici e la antitrasformata per tornare nel dominio del tempo (e capire l'evoluzione nel tempo)
+	- Posso poi individuare il regime permanente e il transitorio (osservando a cosa sono associati i poli)
+- Grafico (osservando che il regime permanente coincide col gradino e il transitorio ha un andamento come desiderato)
+![[Pasted image 20220613171212.png|600]]
+
+
+### CASO POSITIVO (come nell'esercizio
+Transitorio esponenziale che evolve secondo una costante di tempo $a^{*}_{0}$ relativa al polo di $G_{y^{o}\ y}^{*}(s)$ che abbiamo scelto/ottenuto
+- In particolare la durata di tempo del transitorio è $\tau=1/(a^{*}_{0})$
+![[Pasted image 20220613171723.png|600]]
+![[Pasted image 20220613171743.png|500]]
+
+Quindi il polo di $G_{y^{o}\ y}^{*}(s)$ denominato $a^{*}_{0}$ determina la velocità di convergenza del transitorio a $0$ 
+- Quindi tale velocità posso sceglierla a seconda delle esigenze del *tempo di assestamento* (ovvero un intorno del valore di regime - perché l'assestamento è asintotico)
+	- L'intorno può essere espresso ad esempio in percentuale 
+![[Pasted image 20220613172215.png]]
+Formalmente:
+![[Pasted image 20220613172236.png]]
+
+La formula per capire il tempo è il seguente:
+![[Pasted image 20220613172359.png]]
+![[Pasted image 20220613172527.png]]
+
+
