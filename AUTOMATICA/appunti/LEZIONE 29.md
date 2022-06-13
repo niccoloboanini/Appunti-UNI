@@ -60,7 +60,7 @@ Infine, dimostriamo che non abbiamo semplificazioni per gli altri valori non con
 - Metodo utile poi per capire quando si perde di controllabilità
 
 Per ora, definiamo la raggiungibilità come l'insieme di **proprietà** tali per cui, se applicate opportunamente sul sistema, permettono attraverso un certo **controllo $u$** di **portare lo stato iniziale** del sistema nullo $x(0)=0$ **a un certo stato specifico** che si desidera $x(t) = x^{\text{o}}$
- > Si cerca in altre parole di capire se esiste un certo segnale di controllo $u$ che porta lo stato del sistema a un certo valore desiderato di "obiettivo" $x^{\text{o}}$
+ > Si cerca in altre parole di capire se esiste un certo segnale di controllo $u$ che porta lo stato del sistema a un certo valore desiderato di "obiettivo" $x^{\text{o}}$ (partendo da uno stato di quiete)
  ![[Pasted image 20220612162502.png|200]]
 - esempio: braccio robotico --> portare l'oggetto in una certa posizione desiderata in un certo lasso di tempo
 
@@ -143,5 +143,11 @@ $$
 
 > Quindi si conclude che uno stato è raggiungibile solo se è scrivibile come combinazione lineare dei primi $n$ vettori del tipo $B,AB,A^{2}B,\dots,A^{n-1}B$, grazie al Teorema di Cayley-Hamilton. Se non esiste una combinazione lineare opportuna per riscrivere lo stato, allora tale stato non è raggiungibile e quindi il sistema non è completamente raggiungibile (almeno)
 
+##### RIASSUMENDO
+![[Pasted image 20220612175121.png|500]]
 Mettendo insieme tali vettori nelle cosiddetta *matrice di raggiungibilità*, si capisce molto rapidamente quali stati del sistema sono raggiungibili e quali no
 
+#### APPROFONDIMENTO: TEOREMA DI CAYLEY-HAMILTON
+Qualsiasi potenza intera di una matrice $A$ può essere riscritta come combinazione lineare delle prime $n$ matrici, scegliendo opportunamente i coefficienti
+- Quindi le prime $n$ matrici sono uno spazio lineare?
+![[Pasted image 20220612180530.png|600]]
