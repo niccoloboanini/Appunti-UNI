@@ -1,7 +1,7 @@
 ### MATRICE DI RAGGIUNGIBILITA' (finita)
 Mettiamo insieme tutti i vettori si costruisce come detto la *matrice di raggiungibilità*, così definita:
 $$
-\mathcal{R} = [B | AB|\dots|A^{n-1}B]
+\mathcal{R} = [B | AB|\cdots|A^{n-1}B]
 $$
 Immagine di una matrice: lo span delle sue colonne, ovvero i vettori generati combinando linearmente le colonne della matrice
 - Essa coincide proprio con $\mathcal{R}$ insieme degli spazi raggiungibili
@@ -43,7 +43,7 @@ $$, che ha rango $1$, quindi non è completamente raggiungibile
 $$
 \text{rank}(\mathcal{R})=n \iff \det(\mathcal{R})\neq 0
 $$
-- Quindi una volta che si costruisce $\mathcal{R}$ basta guardare il determinante per capire la raggiungibilità (invece di studiare l'immagine tramite tutte le definizioni date)
+- Quindi una volta che si costruisce $\mathcal{R}$ **basta guardare il determinante** per capire la raggiungibilità (invece di studiare l'immagine tramite tutte le definizioni date)
 
 ## RAGGIUNGIBILITA' E CONTROLLABILITA'
 Sappiamo che un sistema generico può essere diviso in $\mathcal{S}_{c}$ e $\mathcal{S}_{\text{nc}}$
@@ -58,7 +58,41 @@ $$
 \large \boxed{\text{sistema completamente raggiungibile} \iff \text{sistema completamente controllabile}}
 $$
 - Controllabilità: ci chiediamo come possiamo modificare gli autovalori --> dominio $s$
-- Raggiungibilità: ci chiediamo come possiamo modificare lo stato --> dominio dello spazio di stato
+- Raggiungibilità: ci chiediamo come possiamo modificare lo stato --> dominio dello spazio di stato (esempio: tempo)
 
 Quindi tipo negli esercizi a volte conviene passare da una piuttosto che l'altra
 
+---
+Inoltre, sappiamo che:
+$$
+\varphi(s) = \varphi_{\text{c}}(s) \  \varphi_{\text{nc}}(s)
+$$
+Possiamo dire che:
+- $\varphi_{\text{c}}(s)$ è un polinomio che contiene gli autovalori controllabili del sistema. Indichiamo con $n_{c}$ il numero di questi autovalori
+	- Quindi $\varphi_{\text{c}}(s)$ è un polinomio di grado $n_{c}$
+
+Allora, *il numero di autovalori controllabili $n_{c}$ coincide con la dimensione dello spazio degli stati raggiungibili $X_{r}$*, ovvero: $$ \text{rank}\{\mathcal{R}\}=\dim\{ X_{r} \} = n_{c} $$
+- quindi guardando il rango della matrice di raggiungibilità si capisce il numero di autovalori controllabili del sistema
+
+Possiamo estendere la precedente relazione:
+$$
+\boxed{\text{completamente raggiungibile} \iff \text{ completamente controllabile}\iff \text{rank}\{\mathcal{R}\}=n}
+$$
+- utile negli esercizi parametrici
+
+### ESEMPIO: studio di controllabilità e stabilizzabilità al variare del parametro
+- Dovrei calcolare il polinomio caratteristico e vedere quando ci sono semplificazioni
+	- Dato che non è sempre facile vedere le semplificazioni, sfruttiamo le relazioni viste per semplificare: $$\text{completamente raggiungibile} \iff \text{ completamente controllabile}\iff \text{rank}\{\mathcal{R}\}=n $$
+- Calcolo allora $\mathcal{R}$
+- Guardo il rango [massimo] (ovvero il determinante [diverso da zero] se la matrice è quadrata)
+- Trovo i valori per cui $\det \neq 0$, così da trovare i valori di $\alpha$ per la completa raggiungibilità e quindi completa controllabilità
+	- Esplicito dimensione di $X_{r}$ e il fatto che $\varphi(s)=\varphi_{\text{c}}(s)$
+- Guardo i comportamenti per valori particolari di $\alpha$ (ovvero quando non è garantita completa raggiungibilità)
+	- Esplicito dimensione di $X_{r}$ (combinando linearmente le colonne)
+	- Cerco di capire com'è grado di $\varphi_{\text{c}}(s)$, ovvero $n_{c}=\text{rank}\{\mathcal{R}\}$
+		- E quindi quanti autovalori controllabili abbiamo
+			- Per capire qual è questo autovalore devo calcolare $(sI-A)^{-1}B$
+![[Pasted image 20220613160103.png|600]]
+![[Pasted image 20220613160256.png|500]]
+
+---

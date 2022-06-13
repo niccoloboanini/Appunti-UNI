@@ -147,7 +147,11 @@ $$
 ![[Pasted image 20220612175121.png|500]]
 Mettendo insieme tali vettori nelle cosiddetta *matrice di raggiungibilità*, si capisce molto rapidamente quali stati del sistema sono raggiungibili e quali no
 
+(lo stato è una combinazione lineare di vettori, con coefficienti arbitrari denominati "momenti" $u_{k}(t^{\text{o}})$)
+
 #### APPROFONDIMENTO: TEOREMA DI CAYLEY-HAMILTON
 Qualsiasi potenza intera di una matrice $A$ può essere riscritta come combinazione lineare delle prime $n$ matrici, scegliendo opportunamente i coefficienti
 - Quindi le prime $n$ matrici sono uno spazio lineare?
 ![[Pasted image 20220612180530.png|600]]
+"Qualsiasi potenza $k$-esima di matrice è combinazione lineare delle prime $n$, con $k \geq n$"
+	- Questo mi permette di definire la matrice di raggiungibilità di dimensione finita (altrimenti sarebbe infinita)
