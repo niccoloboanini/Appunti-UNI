@@ -55,8 +55,70 @@ A differenza delle equazioni dello stato in cui $F=[f_{1},\dots,f_{n}]$ aveva di
 Dove $KC$ è l'equivalente di $F$ per lo stato
 ![[Pasted image 20220614170740.png|600]]
 ![[Pasted image 20220614170846.png|600]]
+**Nota:** Queste sono formule generali, poi noi ci concentreremo sui sistemi SISO che hanno formule più semplici
+## FUNZIONE DI TRASFERIMENTO IN CICLO CHIUSO
+![[Pasted image 20220614175037.png]]
+Quindi:
+![[Pasted image 20220614175158.png|500]]
+Che si può riscrivere in termini di polinomi, ricordando che $G(s) = \frac{b(s)}{a(s)}$:
+![[Pasted image 20220614175337.png]]
 
+Quindi:
+![[Pasted image 20220614175601.png]]
+- dove i poli $a(s)$ sono quelli relativi prima di applicare il controllo sull'uscita
+- dopo il controllo invece abbiamo al denominatore un nuovo polinomio che definisce i poli dopo il controllo, che denominiamo $a^{*}(s)$ [polinomio dei poli in ciclo chiuso]
+	- Gli zeri rimangono gli stessi perché c'è sempre $b(s)$
+
+Pertanto, **la retroazione algebrica di uscita modifica gli zeri ma non i poli**
 
 ## MODO ALTERNATIVO PER POLINOMIO CARATTERISTICO A CICLO CHIUSO
+Sappiamo che possiamo fattorizzare $\varphi(s)$ in anello aperto come: $\varphi(s)=a(s) \varphi_{h}(s)$
+Applicando la retroazione algebrica si ottiene:
+$$
+	\varphi^{*}(s) = a^{*}(s)\ \varphi_{h}(s)=[a(s)+k\ b(s)] \ \varphi_{h}(s)
+$$
+- questo perché con la retroazione algebrica sull'uscita si può modificare solo quello che è sia controllabile che osservabile
+	- Quindi dopo il controllo i poli cambiano perché si esegue il passaggio $a(s) \to a^{*}(s)$ applicando il controllo, invece la parte nascosta non varia, quindi $\varphi_{h}(s) \to \varphi_{h}(s)$ applicando il controllo
+![[Pasted image 20220614180143.png]]
 
-## ALTRO
+- quindi per sistemi **SISO** abbiamo formule più semplici
+
+
+#### RIASSUMENDO
+![[Pasted image 20220614180311.png|600]]
+- dove abbiamo visto per bene solo la dimostrazione della funzione di trasferimento (il polinomio caratteristico invece abbiamo solo l'idea di dimostrazione)
+Inoltre:
+![[Pasted image 20220614180437.png|500]]
+
+
+### ESEMPIO: CARRELLO
+Portare il carrello in posizione $Y_{0}$ (setpoint) misurando solo la posizione $y$ (tramite il contorollo $u$)
+![[Pasted image 20220614180535.png|500]]
+- calcolo il polinomio caratteristico $\varphi(s)$
+- calcolo la funzione di trasferimento $G(s) = \frac{b(s)}{a(s)}$ 
+- fattorizzo il polinomio caratteristico (con la parte nascosta) $\varphi(s) = a(s)\varphi_{h}(s)$
+- posso scrivermi sia $\varphi^{*}(s)$ che $G^{*}_{y^{\text{o}}\ y}(s)$
+- faccio il progetto (specifiche $1,2,3$)
+
+>- calcolo il polinomio caratteristico $\varphi(s)$
+>- calcolo la funzione di trasferimento $G(s) = \frac{b(s)}{a(s)}$ 
+>- fattorizzo il polinomio caratteristico (con la parte nascosta) $\varphi(s) = a(s)\varphi_{h}(s)$
+![[Pasted image 20220614180914.png|500]]
+
+>posso scrivermi sia $\varphi^{*}(s)$ che $G^{*}_{y^{\text{o}}\ y}(s)$
+
+Da cui, applicando le formule:
+(notiamo come su $a^{*}(s)$ posso modificare un solo parametro $K$)
+![[Pasted image 20220614181128.png]]
+
+
+> faccio il progetto (specifiche $1,2,3$)
+
+Proseguo con le specifiche:
+![[Pasted image 20220614181402.png]]
+Per la specifica $3$ notiamo come la funzione di trasferimento sia del II ordine!
+- Solo che $a^{*}(s)$ non possiamo crearlo personalizzato (quindi non potrò scegliere la posizione di tutti i poli). Si nota bene osservando $a^{*}(s)$ in cui compare $K$ una sola volta in questo esercizio
+	- Devo trovare il cosiddetto *luogo delle radici*
+![[Pasted image 20220614181706.png]]
+- dove è stata applicata la formula: $x_{1,2}=\frac{-b \pm \sqrt{\Delta}}{2a}$
+- si nota che i poli in ciclo chiuso variano al variare di $K$
