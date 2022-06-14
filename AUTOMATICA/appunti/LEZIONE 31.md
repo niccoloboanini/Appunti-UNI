@@ -110,5 +110,75 @@ Un modo alternativo per scegliere $F$ (invece di posizionare i poli in modo da a
 ![[Pasted image 20220614123615.png|400]]
 - come si vede c'è uno zero al numeratore in $1$
 
+---
+
 # CONTROLLO IN RETROAZIONE SULL'USCITA
-- 
+- Fin ora abbiamo visto il controllo in retroazione sullo stato, supponendo nella maggior parte dei casi che tutto il vettore $x(t)$ dello stato fosse accessibile per il controllo
+- Supponiamo adesso che sia accessibile *solo l'uscita*, ovvero abbiamo una *informazione parziale*
+	- cioè possiamo osservare solo l'uscita dello stato, senza osservare la sua conformazione interna (appare come una "scatola chiusa")
+
+## OSSERVABILITA'
+Proprietà che descrive cosa stiamo osservando del comportamento interno del sistema osservando solo l'uscita $y$
+- In figura, $x$ è lo stato interno del sistema, che supponiamo di non poter osservare (nascosto)
+![[Pasted image 20220614154233.png|200]]
+- Proprietà duale della controllabilità, che ci diceva come l'ingresso influenzava l'uscita
+
+## EVOLUZIONE LIBERA E FORZATA
+Sappiamo già che per un sistema LTI TC (supponendo $D=0$):
+$$
+\begin{cases} \dot x = Ax +Bu  \\ y = Cx + Du \end{cases}
+$$
+Possiamo trovare la soluzione algebricamente passando da Laplace, e scomponendo le trasformate in evoluzione libera ed evoluzione forzata, sappiamo che:
+![[Pasted image 20220614154700.png|500]]
+- Se torniamo nel tempo, sappiamo che $\mathcal{L}^{-1}\{X_{\ell}(s)\} = \mathcal{L}^{-1}\{(sI-A)^{-1}x(0)\} = e^{At}x(0)$, ovvero dalla evoluzione libera dello stato si vedono tutti i modi naturali del sistema (basta antitrasformare)
+	- e attraverso il polinomio minimo $\varphi(s)$ vedo gli autovalori del sistema che sono gli zeri
+
+- l'evoluzione forzata invece *dipende soltanto dalla parte controllabile del sistema*, infatti: $$ X_{f}(s) = (sI-A)^{-1}BU(s) $$
+	- se prendiamo i poli di $(sI-A)^{-1}B$ essi sono gli *autovalori controllabili* del sistema (ovvero gli zeri di quello che poi abbiamo definito come $\varphi_{\text{c}}(s)$)
+		- Questo perché **alcuni autovalori si cancellano moltiplicando per $B$** (infatti nell'evoluzione libera questa moltiplicazione per $B$ non c'è e vediamo tutti gli autovalori)
+		- Abbiamo poi definito $\varphi_\text{nc}(s)$ come il complementare di $\varphi_{\text{c}}(s)$
+
+#### L'USCITA E I SUOI AUTOVALORI OSSERVABILI
+Guardando l'uscita $Y(s)$ invece, osserviamo che abbiamo una **premoltiplicazione per la matrice $C$**.
+- Tale operazione dal punto di vista matematico, può andare a *cancellare alcuni autovalori* che non compariranno come autovalori dell'*evoluzione libera* $C(sI-A)^{-1}$ dell'uscita
+	- Quindi guardando l'uscita *non si vedono tutti gli autovalori*, ma rimangono soltanto i cosiddetti **autovalori osservabili**
+		- Quelli che si cancellano sono detti autovalori non osservabili
+![[Pasted image 20220614160031.png|600]]
+
+## POLINOMIO CARATTERISTICO DI OSSERVAZIONE
+Allo stesso modo dell'evoluzione forzata dello stesso, definiamo una nuova fattorizzazione del polinomio caratteristico: $$ \large \varphi(s) = \varphi_{\text{o}}(s) \ \varphi_{\text{no}}(s) $$
+Dove:
+![[Pasted image 20220614160222.png|600]]
+
+#### TIPOLOGIE DI AUTOVALORI
+![[Pasted image 20220614160426.png|200]]
+Gli autovalori quindi possono essere di $4$ tipi:
+- osservabili
+- controllabili
+- osservabili e controllabili
+- né osservabili né controllabili
+## FUNZIONE DI TRASFERIMENTO
+Dato che abbiamo: $$ Y_{f}(s) = \underbrace{C(sI-A)^{-1}B}_{\large G(s)}\ \ U(s) $$
+- gli autovalori che rimangono sono quelli che non si cancellano né moltiplicando per $C$ (quindi controllabili) né moltiplicando per $B$ (quindi osservabili)
+- **Perciò quelli che rimangono sono sia osservabili che controllabili**
+
+Pertanto, dato che i poli di $G(s)=C(sI-A)^{-1}$ sono i *poli del sistema* vale la seguente: $$ \large \{ \text{Poli del sistema} \} = \{ \text{Autovalori controllabili}  \}  \cap \{ \text{Autovalori osservabili}\} $$
+Nei sistemi siso, $G(s)$ come sappiamo ha una forma semplice: $$ G(s) = \frac{b(s)}{a(s)} $$
+- quindi i poli del sistema sono gli zeri di $a(s)$
+
+Quindi:
+- evoluzione libera stato $\to$ tutti gli autovalori come poli
+- evoluzione forzata stato $\to$ solo autovalori controllabili (resistono alla moltiplicazione per $B$)
+- evoluzione libera uscita (risposta libera) $\to$ solo autovalori osservabili (resistono a moltiplicazione per $C$)
+- evoluzione forzata uscita (risposta forzata) $\to$ solo autovalori sia osservabili che controllabili (resistono a moltiplicazione per $B$ e per $C$) 
+
+## AUTOVALORI NASCOSTI
+In rosso (relativi a perdita di osservabilità, controllabilità o entrambe):
+![[Pasted image 20220614161717.png|600]]
+
+> Quindi nella relazione ingresso-uscita (passaggio da $u$ a $y$ attraverso il sistema), quello che si vede alla fine su $y$ è solo la parte **controllabile** (quindi può essere modificata dal controllo) e **osservabile** (perché si vede in uscita)
+- Il resto è nascosto
+
+Abbiamo come mostrato una nuova fattorizzazione del polinomio (caso siso): $$ \varphi(s) = a(s) \ \varphi_{h}(s) \implies \varphi_{h}(s) = \frac{\varphi(s)}{a(s)}$$
+Fattorizzazioni viste finora (a seconda della proprietà che vogliamo):
+![[Pasted image 20220614162640.png|250]]
