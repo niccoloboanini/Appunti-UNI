@@ -111,7 +111,7 @@ $$
 G_{y^{o}\ y}^{*}(s) = \frac{r(s)}{\varphi^{*}(s)}
 $$
 - $r(s)$ è un polinomio dato dipendente da $A,B,C$ e che quindi non si può modificare
-- $H$ è un guadagno già scelto per garantire le specifiche, che quindi anch'esso non va toccato
+- $H$ è un guadagno garantire la specifica$2$, quindi anch'esso non va toccato
 - *Posso agire solo su $\varphi^{*}(s)$ per garantire alla risposta al gradino un comportamento desiderato nel transitorio*
 		- in particolare i relativi zeri che poi diventano i poli di $G_{y^{o}\ y}^{*}(s)$
 
@@ -119,7 +119,7 @@ Ricordiamo
 $$
 \varphi^{*}(s) = \det(sI-A+BF)
 $$
-- Come si nota dipende da $F$, quindi dobbiamo scegliere un adeguato valore del guadagno in feedback per garantisce un transitorio come desideriamo (asintoticamente stabile e rapido)
+- Come si nota **dipende da $F$**, quindi dobbiamo scegliere un adeguato valore del guadagno in feedback per garantisce un transitorio come desideriamo (asintoticamente stabile e rapido)
 
 ### ESEMPIO: soddisfare la specifica nel transitorio
 - Progettiamo l'intero progetto per soddisfare le $3$ specifiche ($u=-Fx+Hy^{o}$)
@@ -147,7 +147,7 @@ Abbiamo inoltre anche la risposta forzata in ciclo chiuso
 ![[Pasted image 20220613171212.png|600]]
 
 
-### CASO POSITIVO (come nell'esercizio
+### CASO POSITIVO (come nell'esercizio)
 Transitorio esponenziale che evolve secondo una costante di tempo $a^{*}_{0}$ relativa al polo di $G_{y^{o}\ y}^{*}(s)$ che abbiamo scelto/ottenuto
 - In particolare la durata di tempo del transitorio è $\tau=1/(a^{*}_{0})$
 ![[Pasted image 20220613171723.png|600]]
@@ -163,5 +163,7 @@ Formalmente:
 La formula per capire il tempo è il seguente:
 ![[Pasted image 20220613172359.png]]
 ![[Pasted image 20220613172527.png]]
-
-
+- tanto più portiamo a sinistra il polo $a^{*}_{0}$ tanto più l'esponenziale è rapida e quindi tanto meno è il tempo per arrivare a regime
+	- $\large \upvarepsilon$ è una specifica in percentuale data dal problema
+	- viene dato anche il tempo di assestamento
+	- Risolvendo l'equazione $T_{a,\large \upvarepsilon}$ quindi si ricava facilmente anche $a_{0}^{*}$
