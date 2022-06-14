@@ -122,3 +122,31 @@ Per la specifica $3$ notiamo come la funzione di trasferimento sia del II ordine
 ![[Pasted image 20220614181706.png]]
 - dove è stata applicata la formula: $x_{1,2}=\frac{-b \pm \sqrt{\Delta}}{2a}$
 - si nota che i poli in ciclo chiuso variano al variare di $K$
+
+#### LUOGO RADICI PER $K<0$
+![[Pasted image 20220614184540.png|600]]
+- grafico che ci dice come si muovono i poli sul piano $s$ applicando il controllo
+	- Se $K=0$ non abbiamo il controllo
+	- Se $K<0$ (vincolo) i poli cambiano i posizione
+- L'insieme di tutti i possibili poli è il *luogo dei poli*
+
+#### LUOGO RADICI PER $K>0$
+![[Pasted image 20220614184901.png|500]]
+
+Si vede che i poli con il controllo si muovono ma non completamente in modo arbitrario, perché abbiamo dei vincoli
+
+##### NOTA:
+- non è richiesto questo grafico all'esame
+
+### ALTRO ESEMPIO: STABILITA' NON POSSIBILE
+Nota: se viene data la funzione di trasferimento $G(s)$ allora è *sottinteso* che non c'è la parte di autovalori nascosta, quindi $\varphi_{h}(s)=1$
+
+- Manca un termine in $s$ quindi non riesco ad applicare la regola di Cartesio (per avere radici minori di zero di $\varphi^{*}(s)$)
+- non riesco variando $K$ a rendere entrambi i poli $p^{*}_{1,2}$ con parte $\text{Re}<0$
+	- Quindi $u=-Ky+Hy^{\text{o}}$ non è una legge sufficiente per poter stabilizzare
+		- (Ci saranno leggi di controllo più generali per farlo lo stesso)
+![[Pasted image 20220614185529.png]]
+
+Infatti, si nota che non si stabilizza tracciando il luogo delle radici:
+- non riesco a portare entrambi i poli sul semipiano sinistro
+![[Pasted image 20220614185649.png|500]]
