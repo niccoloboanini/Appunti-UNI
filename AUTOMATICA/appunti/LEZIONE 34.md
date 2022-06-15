@@ -105,6 +105,102 @@ Inoltre, se il sistema è affetto da *disturbi costanti*, allora l'azione integr
 
 
 ## LEGGE DI CONTROLLO CON AZIONE INTEGRALE
-L'azione integrale introduce un polo in $0$ nella funzione di trasferimento del controllore
+L'azione integrale introduce un polo in $0$ nella funzione di trasferimento del controllore (cfr. conti d'introduzione)
 Quindi in generale:
 ![[Pasted image 20220615170729.png]]
+Questo perché $$ K(s) = \frac{q(s)}{p(s)} = \frac{q_{nk}s^{nK}+\dots+q_{1}s+q_{0}}{s^{nK}+\dots+p_{1}s}  $$
+, quindi per avere un polo il denominatore si deve annullare in zero (vero quando il polinomio al denominatore non ha il termine noto)
+
+Andiamo a capire qual è l'effetto dell'azione integrale sul sistema.
+### EFFETTO DI UN DISTURBO SUL SISTEMA IN CICLO CHIUSO
+![[Pasted image 20220615173558.png|400]]
+- Il disturbo $d$ agisce in ingresso. Cosa cambia nel sistema?
+> Avere un disturbo significa avere nel sistema un **nuovo ingresso**
+- L'ingresso classico è corrotto da un disturbo $d$
+
+Quindi il sistema in ciclo chiuso ora ha $2$ ingressi:
+- Il riferimento $y^{\text{o}}$ e il disturbo $d$
+
+Si cerca di capire l'evoluzione dell'uscita per il sistema in ciclo chiuso
+- Si aggiunge il disturbo ai conti già fatto
+![[Pasted image 20220615173906.png]]
+
+Si sono ottenute **$2$ funzioni di trasferimento**, perché ci sono due ingressi e una uscita:
+- Una è quella già vista (con $H_{f}=1$)
+- L'altra invece è la funzione di trasferimento tra l'ingresso e l'uscita: ovvero come il disturbo agisce sull'uscita, che chiamiamo $G^{*}_{dy}$
+![[Pasted image 20220615174052.png]]
+
+Le possiamo riscrivere in termini di **polinomi** come segue:
+![[Pasted image 20220615174204.png|600]]
+- cambia solo il numeratore (in un caso abbiamo $q(s)$ e in un caso $p(s)$)
+	- Questo causa dei cambiamenti per la risposta in ciclo chiuso
+
+### REGIME PERMANENTE
+- Vediamo come varia la risposta in ciclo chiuso
+
+Supponiamo riferimento e disturbo costanti (a gradino)
+$$
+y^{\text{o}}(t)=Y_{0}\ 1(t)  \quad , \quad d(t)=D_{0}\ 1(t)
+$$
+Se abbiamo stabilità asintotica in ciclo chiuso del controllore, allora sappiamo che il sistema a ciclo chiuso converge al regime permanente, che provo a calcolare ricordando che:
+- dato che il sistema è lineare, il regime permanente complessivo è la somma dei singoli regimi (sovrapposizione degli effetti), quindi $$ t_{f}^{RP}(t) = t_{f}^{Y^{\text{o}}}(t)+y_{f}^{D}(t) $$
+	- $t_{f}^{Y^{\text{o}}}(t)$ regime permanente in risposta al riferimento $y^{\text{o}}$
+	- $t_{f}^{D}(t)$ regime permanente in risposta al disturbo $d$
+
+La situazione che abbiamo come schema a blocchi è la seguente:
+![[Pasted image 20220615175130.png|300]]
+
+Quindi (dato che in ingresso abbiamo segnali costanti):
+![[Pasted image 20220615175225.png|300]]
+
+Dal teorema della risposta in frequenza (ingresso costante: allora il regime permanente è ancora un segnale a gradino pari al segnale d'ingresso per un guadagno in continua)
+![[Pasted image 20220615175350.png]]
+- dove in blu abbiamo la parte relativa al riferimento e che avevamo già calcolato (per la specifica $2$)
+- in rosso invece abbiamo la parte "nuova" relativa al disturbo $d$
+
+>Questa forma qui vale sempre quando abbiamo un sistema a ciclo chiuso su cui agisce un disturbo costante. Permette di misurare l'effetto del disturbo a regime.
+
+
+### PROPRIETA' AZIONE INTEGRALE
+Vediamo cosa comporta avere un polo in $0$ sul regime permanente. Calcoliamo quindi i guadagni in continua (con $p(0)=0$):
+
+- Il guadagno in continua in ciclo chiuso *diventa unitario*, infatti
+![[Pasted image 20220615175953.png]]
+	- Quindi l'azione integrale va a soddisfare automaticamente la specifica $2$
+
+- il guadagno in continua a ciclo chiuso tra disturbo e uscita si *annulla*, infatti:
+![[Pasted image 20220615180126.png]]
+	- Quindi l'azione integrale fa sì che l'effetto del disturbo (costante) sparisce (quindi *non ha effetto sull'uscita*)
+
+Pertanto, in termini di **regime permanente**:
+![[Pasted image 20220615180303.png]]
+	-  Quindi l'azione integrale mi permette di avere un *regime permanente coincidente con il set-point*, ovvero di raggiungere l'obiettivo del progetto
+
+
+Quindi con l'azione integrale sono garantite:
+- specifica $2$
+- annullamento del disturbo (reiezione perfetta)
+
+
+##### RIASSUMENDO
+- Un grado di libertà $\to$ $H_{f}=1$
+![[Pasted image 20220615180818.png]]
+
+![[Pasted image 20220615180847.png|600]]
+
+
+### COME SI MODIFICA IL PROGETTO
+Il polinomio deve annullarsi in zero al denominatore, quindi non metto il termine noto al denominatore, pertanto:
+- con l'azione integrale i parametri liberi calano da $2 n_{K}+1$ a $2 n_{K}$
+![[Pasted image 20220615181155.png]]
+
+Quindi, **devo aumentare l'ordine del controllore**
+- si chiede che $n_{K}\geq \text{grado }a(s)$
+![[Pasted image 20220615181506.png]]
+
+Quindi le buone proprietà dell'azione integrale le pago nella realizzazione del progetto nell'essere costretto a scegliere $n_K$ con un grado un po' più alto rispetto al progetto senza azione integrale
+- In questo modo però posso posizionare i poli a mio piacimento (come volevamo)
+
+**Nota:** inoltre deve valere anche $b(0)\neq 0$, infatti:
+![[Pasted image 20220615181706.png|500]]
+Se avessi $b(0)= 0$ non posso stabilizzare con l'azione integrale
