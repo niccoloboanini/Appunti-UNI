@@ -115,3 +115,91 @@ Schema molto usato in ambito industriale (cambia rispetto a quelle viste prima s
 
 2) Se $H_{f}(s)\neq 1$ allora il sistema di controllo è a **due gradi di libertà**, quindi dovremo progettare due sistemi di controllo che sono dipendenti dal riferimento e dall'uscita secondo la legge di $U(s)$
 
+## SISTEMA A CICLO CHIUSO
+Si arriva a un risultato molto simile analogo a quello della retroazione algebrica già vista in precedenza (lezione scorsa), in cui avevamo:
+![[Pasted image 20220615145133.png]]
+
+Adesso invece cambia il nostro controllo $\mathcal{C}$, ma il risultato della funzione di trasferimento è lo stesso, solo che ci inseriamo le funzioni $H(s)$ e $K(s)$ al posto delle costanti $H$ e $K$:
+![[Pasted image 20220615145251.png|400]]
+
+Ponendo $H_{f}(s)$ costante (vedremo che basterà per le mie specifiche), ovvero $H_{f}$, si ottiene $H(s) = H_{f}(s)K(s)=H_{f}K(s)$, quindi:
+$$
+\boxed{G^{*}_{y^{\text{o}}y}(s)=\frac{K(s)G(s)}{1+K(s)G(s)}H_{f}}
+$$, che rappresenta la *funzione di trasferimento in ciclo chiuso* che utilizzeremo per la retroazione dinamica per l'uscita
+
+#### RISCRITTURA IN TERMINI DI POLINOMI
+Possiamo riscrivere il risultato ottenuto in termini di polinomi invece di $G(s)$ e $K(s)$.
+
+(Nota: simile a quanto già visto: ![[Pasted image 20220615145738.png]])
+
+Quindi:
+- Posso riscrivere $G(s)$ come rapporto di polinomi (con $b(s)$ e $a(s)$ polinomi dati dal problema)
+- Posso riscrivere $K(s)$ come rapporto di polinomi (con $q(s)$ e $p(s)$ **polinomi scelti da me**)
+(semplificazione: moltiplico per $p(s)$ e $a(s)$)
+![[Pasted image 20220615150635.png|600]]
+
+Scegliendo $q(s)$ e $p(s)$ posso associare i poli in ciclo chiuso che mi servono
+
+Note:
+- al numeratore rimangono gli zeri di $G(s)$ e $K(s)$ [quindi cambia poco]
+- al denominatore abbiamo un nuovo polinomio dei poli in ciclo chiuso, che dipende da $a(s)$, $b(s)$, $q(s)$, $p(s)$
+	- per questo di rinomina il denominatore con $a^{*}(s)$
+	- la cosa buona adesso è che possiamo agire su $p(s)$ e $q(s)$ per modificare i poli come vogliamo (abbiamo più gradi di libertà sul polinomio)
+
+### POLINOMIO CARATTERISTICO IN CICLO CHIUSO
+Per il polinomio caratteristico in ciclo chiuso, si sottolinea che la parte di $\varphi_{h}(s)$ rimane inalterata (perché come detto non si modificano i poli nascosti). Discorso diverso invece per $a(s)$, che diventa $a^{*}(s)$. Quindi:
+$$
+\overbrace{\varphi(s)=\varphi_{h}(s)a(s)}^{\Large \text{anello aperto}} \implies \overbrace{\varphi^{*}(s) =\varphi_{h}(s)a^{*}(s)=\varphi_{h}(s)\ [p(s)a(s)+q(s)b(s)]}^{\Large \text{ciclo chiuso}}
+$$
+
+##### RIASSUMENDO
+![[Pasted image 20220615151429.png]]
+
+Quindi per il progetto dovremo costruire appositamente per rispettare le specifiche:
+- $q(s)$, $p(s)$   (specifica $1$ e $3$)
+- $H_{f}$  (specifica $2$)
+
+Procedimento simile solo che adesso per progettare $K(s)$ abbiamo un *rapporto di polinomi* (quindi è un po' più complesso)
+
+## ESEMPIO (quello che non riuscivamo a stabilizzare)
+- Non poteva essere stabilizzato con la retroazione algebrica $u=-Ky+Hy^{\text{o}}$
+- Ci proviamo allora con le retroazione dinamica: $U(s)=K(s)[H_{f}Y^{\text{o}}(s)-Y(s)]$
+	- Scegliamo $K(s)$ come rapporto di polinomi di primo grado (così da avere $3$ parametri liberi $p_{0},q_{0},q_{1}$)
+	- Riscrivo $\varphi^{*}(s)$ e vedo un po'
+	- Impongo coefficienti $\varphi^{*}(s)$ in modo arbitrario (ora ne ho la possibilità)
+		- Così da avere le radici (non nascoste) posizionate dove vogliamo
+![[Pasted image 20220615152449.png|600]]
+- Posizioniamo i poli in ciclo chiuso in $-1,-10,-10$ (numeri scelti)
+	- Basta fattorizzare $\varphi^{*}(s)$ per capire la forma in generale
+	- Vado a eguagliare i coefficienti
+
+![[Pasted image 20220615152735.png|600]]
+
+Possiamo inserirli in $K(s)$ così da ottenere:
+![[Pasted image 20220615152844.png]]
+
+Da cui, la funzione di trasferimento in ciclo chiuso:
+![[Pasted image 20220615152914.png]]
+
+Per la specifica $2$, imponiamo inseguimento costante uguale a $1$, ovvero:
+![[Pasted image 20220615153011.png]]
+
+Quindi possiamo esplicitare la legge di controllo in Laplace
+![[Pasted image 20220615153135.png]]
+
+
+## SCELTA DELL'ORDINE DEL CONTROLLORE
+Siano
+$$
+G(s) = \frac{b(s)}{a(s)}
+$$e
+$$
+K(s) = \frac{q(s)}{p(s)}  \quad , \quad \text{con grado }p(s) = \text{grado }q(s)=n_{K} \textbf{ ordine del controllore}
+$$
+Allora abbiamo **$2n_K+1$ parametri liberi**
+
+>Se scegliamo $n_{K} \geq \text{grado }a(s)-1$ allora possiamo scegliere i coefficienti di $a^{*}(s)$ arbitrariamente per garantire il posizionamento che vogliamo nei poli a ciclo chiuso (quindi abbiamo un controllore adatto)
+
+- Come nell'esempio precedente: avevamo $\text{grado }a(s)=2$ quindi abbiamo scelto $K(s)$ come rapporto di polinomi di primo grado (grado $n_K=a(s)-1=2-1=1$)
+
+

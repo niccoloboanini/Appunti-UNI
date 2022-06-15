@@ -152,6 +152,8 @@
     "sottoelungazione",
     "sottoelongazione",
     "premoltiplicazione",
-    "siso"
+    "siso",
+    "antritrasformare",
+    "discretizza"
   ]
 }

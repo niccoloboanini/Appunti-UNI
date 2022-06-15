@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "AUTOMATICA/appunti/LEZIONE 33.md",
+            "file": "AUTOMATICA/appunti/LEZIONE 34.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AUTOMATICA/appunti/LEZIONE 33.md",
+                "file": "AUTOMATICA/appunti/LEZIONE 34.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +97,7 @@
   },
   "active": "221da609616cf9b3",
   "lastOpenFiles": [
+    "AUTOMATICA/appunti/LEZIONE 34.md",
     "AUTOMATICA/appunti/LEZIONE 33.md",
     "AUTOMATICA/appunti/LEZIONE 31.md",
     "AUTOMATICA/appunti/LEZIONE 32.md",
@@ -105,7 +106,6 @@
     "AUTOMATICA/appunti/LEZIONE 28.md",
     "AUTOMATICA/appunti/Untitled Diagram.svg",
     "README.md",
-    "AUTOMATICA/appunti/LEZIONE 26.md",
-    "AUTOMATICA/appunti/LEZIONE 27.md"
+    "AUTOMATICA/appunti/LEZIONE 26.md"
   ]
 }
