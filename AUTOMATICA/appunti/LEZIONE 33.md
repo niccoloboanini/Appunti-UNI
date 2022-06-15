@@ -67,3 +67,24 @@ Esempio sulle slide (in cui si sceglie $K=6$ che comunque rispetta le specifiche
 # RETROAZIONE DINAMICA SULL'USCITA
 - Quando la retroazione algebrica non basta
 
+Idea: *generalizzare la legge di controllo precedentemente vista nel dominio di Laplace*
+$$
+u(t) = -Ky(t)+Hy^{\text{o}}(t) \to U(s) = -H Y(s) +H Y^{\text{o}}(s) \to \text{da generalizzare}
+$$
+Per generalizzare significa che $H$ e $K$ *non sono più scalari*, ma diventano *funzioni di trasferimento* (in modo tale da avere più margine di scelta)
+Quindi:
+$$
+u(t) = -Ky(t)+Hy^{\text{o}}(t) \to U(s) = -H Y(s) +H Y^{\text{o}}(s) \to \boxed{U(s) = -K(s)Y(s)+H(s)Y^{\text{o}}(s)}
+$$
+- Viene detta *retroazione dinamica* sull'uscita (dinamica perché *il controllore diventa un sistema dinamico*, ovvero avente le sue funzioni di trasferimento)
+	- Vogliamo controllare un sistema dinamico $\to$ scegliamo un controllore dinamico (stessa complessità)
+
+### DIAGRAMMA A BLOCCHI
+- $\mathcal{P}$: sistema da controllare (con accesso solo di $u$ e $y$)
+- $H(s)$: funzione di trasferimento (ovvero un *filtraggio* [elaborazione] del segnale di riferimento $y^{\text{o}}$)
+- $K(s)$: altro *filtro* che elabora l'uscita $y$
+
+Sommando le due elaborazioni filtrate si genera *l'azione di controllo*
+- Il controllore $\mathcal{C}$ quindi è un sistema dinamico e comprendere $H(s)$ e $K(s)$, avente una sua relazione ingresso uscita: $$  U(s)=-K(s)Y(s)+H(s)Y^{\text{o}}(s)=\underbrace{\begin{bmatrix} -K(s)  & H(s) \end{bmatrix}}_{\text{funzione trasferimento}}\begin{bmatrix} Y(s) \\ Y^{\text{o}}(s) \end{bmatrix} $$
+> il controllore prende in ingresso il riferimento e l'uscita e genera il segnale $u$ attraverso la funzione di trasferimento
+
