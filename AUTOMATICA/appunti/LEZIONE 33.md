@@ -71,7 +71,7 @@ Idea: *generalizzare la legge di controllo precedentemente vista nel dominio di 
 $$
 u(t) = -Ky(t)+Hy^{\text{o}}(t) \to U(s) = -H Y(s) +H Y^{\text{o}}(s) \to \text{da generalizzare}
 $$
-Per generalizzare significa che $H$ e $K$ *non sono più scalari*, ma diventano *funzioni di trasferimento* (in modo tale da avere più margine di scelta)
+Per generalizzare significa che $H$ e $K$ (guadagno in feedforward e in feedback) *non sono più scalari*, ma diventano *funzioni di trasferimento* (in modo tale da avere più margine di scelta)
 Quindi:
 $$
 u(t) = -Ky(t)+Hy^{\text{o}}(t) \to U(s) = -H Y(s) +H Y^{\text{o}}(s) \to \boxed{U(s) = -K(s)Y(s)+H(s)Y^{\text{o}}(s)}
@@ -80,6 +80,7 @@ $$
 	- Vogliamo controllare un sistema dinamico $\to$ scegliamo un controllore dinamico (stessa complessità)
 
 ### DIAGRAMMA A BLOCCHI
+![[Pasted image 20220615124958.png|500]]
 - $\mathcal{P}$: sistema da controllare (con accesso solo di $u$ e $y$)
 - $H(s)$: funzione di trasferimento (ovvero un *filtraggio* [elaborazione] del segnale di riferimento $y^{\text{o}}$)
 - $K(s)$: altro *filtro* che elabora l'uscita $y$
@@ -87,4 +88,30 @@ $$
 Sommando le due elaborazioni filtrate si genera *l'azione di controllo*
 - Il controllore $\mathcal{C}$ quindi è un sistema dinamico e comprendere $H(s)$ e $K(s)$, avente una sua relazione ingresso uscita: $$  U(s)=-K(s)Y(s)+H(s)Y^{\text{o}}(s)=\underbrace{\begin{bmatrix} -K(s)  & H(s) \end{bmatrix}}_{\text{funzione trasferimento}}\begin{bmatrix} Y(s) \\ Y^{\text{o}}(s) \end{bmatrix} $$
 > il controllore prende in ingresso il riferimento e l'uscita e genera il segnale $u$ attraverso la funzione di trasferimento
+
+
+Il vantaggio è che, a partire da una $G(s)$ data dell'impianto $\mathcal{P}$, possiamo progettare appositamente $K(s)$ e $H(s)$ per avere il comportamento desiderato al sistema in retroazione
+![[Pasted image 20220615124932.png|400]]
+
+
+### SCELTA TIPICA DI H(F)
+**Nota:** tipicamente si sceglie: $H(s)=H_{f}(s)K(s)$, dove $H_{f}(s)$ è un *prefisso* e $K(s)$ è un *guadagno in feedback*
+
+- Quindi $$ U(s) = -K(s)Y(s)+H_{f}(s)K(s)Y^{\text{o}}(s)=K(s)[H_{f}(s)Y^{\text{o}}(s)-Y(s)] $$
+Lo schema di controllo diventa:
+- Riferimento in ingresso $y^{\text{o}}$
+- Lo elaboro con il prefisso $H_{f}(s)$, ottenendo: $H_{f}(s)Y^{\text{o}}(s)$
+- Sottraggo l'uscita $y$, ottenendo la parentesi quadra $[H_{f}(s)Y^{\text{o}}(s)-Y(s)]$
+- Elaboro tale risultato con il guadagno in feedback $K(s)$, cos' da ottenenere *l'uscita di controllo $u$*
+- Essa entrata nell'impianto $\mathcal{P}$ (processo) che elabora l'uscita $y$
+
+Schema molto usato in ambito industriale (cambia rispetto a quelle viste prima solo la struttura interna che porta una formula di $H(s)=H_{f}K(s)$)
+![[Pasted image 20220615125836.png|500]]
+
+**Si distinguono $2$ casi:**
+1) il prefisso non c'è, ovvero $H_{f}(s)=1$, quindi: $$  U(s) =K(s)[Y^{\text{o}}(s)-Y(s)]  $$![[Pasted image 20220615130012.png]]
+È un sistema di controllo **a un grado di libertà** (basta progettare una sola funzione di trasferimento $K(s)$)
+- L'azione di controllo $u$ dipende solo dell'errore d'inseguimento $y^{\text{o}}-y$
+
+2) Se $H_{f}(s)\neq 1$ allora il sistema di controllo è a **due gradi di libertà**, quindi dovremo progettare due sistemi di controllo che sono dipendenti dal riferimento e dall'uscita secondo la legge di $U(s)$
 
