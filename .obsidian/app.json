@@ -154,6 +154,8 @@
     "premoltiplicazione",
     "siso",
     "antritrasformare",
-    "discretizza"
+    "discretizza",
+    "progettabile",
+    "Luenberger"
   ]
 }
