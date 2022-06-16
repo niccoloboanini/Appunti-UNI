@@ -112,3 +112,6 @@ Soluzione della funzione di trasferimento: $$ G^{*}_{y^{\text{o}}y}(s) = \frac{1
 
 Grafico (indicativo):
 ![[Pasted image 20220616131546.png]]
+
+---
+
