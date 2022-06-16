@@ -125,7 +125,9 @@ Adesso invece cambia il nostro controllo $\mathcal{C}$, ma il risultato della fu
 Ponendo $H_{f}(s)$ costante (vedremo che basterà per le mie specifiche), ovvero $H_{f}$, si ottiene $H(s) = H_{f}(s)K(s)=H_{f}K(s)$, quindi:
 $$
 \boxed{G^{*}_{y^{\text{o}}y}(s)=\frac{K(s)G(s)}{1+K(s)G(s)}H_{f}}
-$$, che rappresenta la *funzione di trasferimento in ciclo chiuso* che utilizzeremo per la retroazione dinamica per l'uscita
+$$
+
+Che rappresenta la *funzione di trasferimento in ciclo chiuso* che utilizzeremo per la retroazione dinamica per l'uscita
 
 #### RISCRITTURA IN TERMINI DI POLINOMI
 Possiamo riscrivere il risultato ottenuto in termini di polinomi invece di $G(s)$ e $K(s)$.
@@ -192,10 +194,13 @@ Quindi possiamo esplicitare la legge di controllo in Laplace
 Siano
 $$
 G(s) = \frac{b(s)}{a(s)}
-$$e
+$$
+e
+
 $$
 K(s) = \frac{q(s)}{p(s)}  \quad , \quad \text{con grado }p(s) = \text{grado }q(s)=n_{K} \textbf{ ordine del controllore}
 $$
+
 Allora abbiamo **$2n_K+1$ parametri liberi**
 
 >Se scegliamo $n_{K} \geq \text{grado }a(s)-1$ allora possiamo scegliere i coefficienti di $a^{*}(s)$ arbitrariamente per garantire il posizionamento che vogliamo nei poli a ciclo chiuso (quindi abbiamo un controllore adatto)
