@@ -93,11 +93,91 @@ Quindi il modo formale per vedere se il sistema funziona, è andare a vedere com
 #### IDEA
 Ci rimane da scegliere $L$ (parametro di progetto) apposito tale da rendere la matrice della dinamica $A-LC$ **asintoticamente stabile** (tutti gli autovalori con $\text{Re}<0$)
 - Se lo facciamo, allora *l'errore di stima* tende a zero
-- Quindi dobbiamo trovare la soluzione del sistema LTI autonomo che viene qualcosa del tipo: $$ \exp[(A-LC)t] \ e(0) \to \underbrace{e^{(A-LC)t}}_{\text{esponenziale}}\ \underbrace{e(0)}_{\text{errore}}$$ - ovvero: esponenziale di matrice per condizione iniziale (data dall'errore di stima al tempo zero essendo un sistema TI)
+- Quindi dobbiamo trovare la soluzione del sistema LTI autonomo che viene qualcosa del tipo: $$ \exp[(A-LC)t] \ e(0) \to \underbrace{e^{(A-LC)t}}_{\text{esponenziale}}\ \underbrace{e(0)}_{\text{errore iniziale}}$$ - ovvero: esponenziale di matrice per condizione iniziale (data dall'errore di stima al tempo zero essendo un sistema TI)
 
 ![[Pasted image 20220616093526.png]]
 
 **Nota:**
 Situazione simile alla retroazione sullo stato in cui avevamo $A-BF$ e dovevamo trovare $F$
-- Qui invece abbiamo $A-LC$ e dobbiamo trovare $L$
+- Qui invece abbiamo $A-LC$ e dobbiamo trovare $L$, che in generale ha dimensione $\dim(x) \times \dim(y)$, in caso SISO: $\dim(x) \times 1$
+
+
+## REGOLATORE
+È un sistema di controllo formato dalla combinazione dell'osservatore dello stato e una retroazione sullo stato stimato
+![[Pasted image 20220616101402.png|600]]
+
+Quindi: 
+$$
+\mathcal{C}: \begin{cases} u=-F \ \hat x + H \ y^{\text{o}}  \\ \displaystyle \frac{d \hat x}{dt}=A \dot x + B u + L (y-C \hat x) \end{cases}
+$$
+Con i parametri da trovare che sono (caso SISO):
+- $F$: vettore riga
+- $H$: scalare
+- $L$: vettore colonna
+
+> In generale quindi prima si stima uno stato con l'osservatore $\mathcal{O}$, in modo tale da avere un vettore $\hat x$ sufficientemente buono su cui accedere; e poi appunto applichiamo la retroazione su tale stato stimato
+
+
+Possiamo quindi analizzare il sistema di controllo per capire l'effetto sul sistema (dinamica in ciclo chiuso - polinomio caratteristico, funzione trasferimento)
+
+## DINAMICA IN CICLO CHIUSO
+Studio cosa succede interconnettendo $\mathcal{P}$ con $\mathcal{C}$
+
+- Riscrivo tutto in termini di errori di stima (quindi anche la retroazione sarà imprecisa se progettiamo male il sistema - ma in generale se l'errore di stima è nullo allora abbiamo asintoticamente lo stesso risultato)
+	- Riscrivere in termini di errore di stima è più comodo per l'analisi
+
+Infatti:
+![[Pasted image 20220616103523.png|500]]
+![[Pasted image 20220616103610.png|600]]
+
+#### MATRICE DELLA DINAMICA
+Dove si individua **la matrice della dinamica in ciclo chiuso  $A^{*}$**: $$ A^{*}= \begin{bmatrix} A-BF  & B \ F  \\ 0  &  A-L \ C \end{bmatrix} $$
+#### POLINOMIO CARATTERISTICO IN CICLO CHIUSO
+Il polinomio caratteristico in ciclo chiuso è $\varphi^{*}(s) = \det(sI-A^{*})$
+- Essendo $A^{*}$ triangolare a blocchi basta fare il prodotto dei determinanti dei blocchi diagonali, ovvero $$ \large \varphi^{*}(s) = \det(sI-A+B\ F) \cdot \det(sI-A+L \ C) $$
+- il primo blocco lo avevamo già quando si applicava la retroazione sullo stato, e dipende da $F$
+- il secondo blocco invece è nuovo, ed è dovuto alla presenza dell'osservatore, e dipende da $L$
+
+#### FUNZIONE DI TRASFERIMENTO
+Si può dimostrare che è la stessa della retroazione sullo stato
+
+Quindi,
+##### RIASSUMENDO:
+![[Pasted image 20220616104427.png]]
+- $L$ e $F$ si possono progettare indipendentemente! (grazie al **principio di separazione**)
+	- uno mi serve per rendere stabile una parte (retroazione sullo stato), l'altro mi serve per rendere stabile un'altra parte (dinamica errore di stima tendente a zero dopo un certo tempo)
+	- infatti anche la funzione di trasferimento rimane la stessa in quando dipende solo da $F$ (e $H$)
+- Quindi ci rimane da capire solo come progettare $L$
+	- La vera differenza in fase di progetto è proprio il secondo blocco di $\varphi^{*}(s)$
+
+
+## PROGETTO DEL REGOLATORE
+![[Pasted image 20220616105738.png|600]]
+- la parte nuova è la 3)
+- e magari si cerca di porre molto lontano dall'asse immaginario gli autovalori di $A - L \ C$ per avere errore di stima che converge rapidamente a $0$
+
+#### PROGETTO DI L
+Duale al caso per il guadagno $F$, in cui di diceva che $A-BF$ era asintoticamente stabile $\iff$ tutti gli autovalori di $\varphi_{\text{nc}}$ (non *controllabili*) avevano $\text{Re}<0$ (perché avevamo una moltiplicazione per la matrice $B$)
+
+Per progettare $L$ si osservano gli autovalori *osservabili* (perché abbiamo una moltiplicazione per $C$). Essendo non modificabili (perché non compaiono in uscita), allora si richiede che abbiano $\text{Re} < 0$ (ovvero siano già stabili, perché non posso modificarli appunto)
+- se rientro in queste ipotesi riesco a *stimare lo stato*
+- viceversa possiamo modificare a piacere gli autovalori osservarbili di $\varphi_\text{o}$
+![[Pasted image 20220616110735.png]]
+
+- ecco perché si parla di *osservatore*
+
+### BUONA POSIZIONE DEI PROBLEMI DI CONTROLLO E REGOLATORE
+**Mettiamo tutto insieme**
+Dato che:
+![[Pasted image 20220616111150.png]]
+
+Allora:
+![[Pasted image 20220616111211.png]]
+
+Quindi per avere un progetto con il **regolatore completo** (con $F$ e $L$ adatti), devo controllare che *tutti gli autovalori nascosti siano stabili*
+- Analogamente (in altre parole), tutti gli autovalori instabili ($\text{Re}\geq 0$) devono comparire come poli di $G(s)$ perché devono essere sia controllabili che osservabili
+
+È una condizione necessaria e sufficiente (se rispettata, riesco a muovere gli autovalori come voglio)
+
+
 
