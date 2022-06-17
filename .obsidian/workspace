@@ -10,12 +10,12 @@
           {
             "id": "e368fbe67e259e70",
             "type": "leaf",
-            "dimension": 44.382801664355064,
+            "dimension": 46.85792349726776,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AUTOMATICA/appunti/LEZIONE 08.md",
-                "mode": "preview",
+                "file": "AUTOMATICA/appunti/LEZIONE 09.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -23,7 +23,7 @@
           {
             "id": "44ada349d023caee",
             "type": "leaf",
-            "dimension": 55.617198335644936,
+            "dimension": 53.14207650273224,
             "state": {
               "type": "markdown",
               "state": {
@@ -119,6 +119,7 @@
   "active": "44ada349d023caee",
   "lastOpenFiles": [
     "AUTOMATICA/appunti/1. FORMULARIO.md",
+    "AUTOMATICA/appunti/LEZIONE 09.md",
     "AUTOMATICA/appunti/LEZIONE 08.md",
     "AUTOMATICA/appunti/LEZIONE 07.md",
     "AUTOMATICA/appunti/LEZIONE 06.md",
@@ -126,7 +127,6 @@
     "AUTOMATICA/appunti/LEZIONE 04.md",
     "AUTOMATICA/appunti/LEZIONE 03.md",
     "AUTOMATICA/appunti/LEZIONE 02.md",
-    "AUTOMATICA/appunti/LEZIONE 01.md",
-    "AUTOMATICA/appunti/LEZIONE 11.md"
+    "AUTOMATICA/appunti/LEZIONE 01.md"
   ]
 }
