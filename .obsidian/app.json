@@ -162,6 +162,8 @@
     "prefiltro",
     "eq",
     "Damping",
-    "pASSI"
+    "pASSI",
+    " Laplac",
+    "Diagonalizzabile"
   ]
 }
