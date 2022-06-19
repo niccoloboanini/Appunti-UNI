@@ -159,6 +159,9 @@
     "Luenberger",
     "osservarbili",
     "della ",
-    "prefiltro"
+    "prefiltro",
+    "eq",
+    "Damping",
+    "pASSI"
   ]
 }
