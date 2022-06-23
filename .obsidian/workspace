@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "AUTOMATICA/appunti/3. FORMULARIO NEW.md",
+            "file": "AUTOMATICA/appunti/0. FORMULARIO.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AUTOMATICA/appunti/3. FORMULARIO NEW.md",
+                "file": "AUTOMATICA/appunti/0. FORMULARIO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,15 +106,15 @@
   },
   "active": "e368fbe67e259e70",
   "lastOpenFiles": [
+    "AUTOMATICA/appunti/0. FORMULARIO.md",
+    "AUTOMATICA/appunti/LEZIONE 02.md",
+    "AUTOMATICA/appunti/1. TABELLINE.md",
     "AUTOMATICA/appunti/3. FORMULARIO NEW.md",
     "AUTOMATICA/appunti/2. RIASSUNTO.md",
-    "AUTOMATICA/appunti/1. TABELLINE.md",
     "AUTOMATICA/appunti/4. NUOVO.md",
     "AUTOMATICA/appunti/LEZIONE 25.md",
     "AUTOMATICA/appunti/LEZIONE 24.md",
     "AUTOMATICA/appunti/LEZIONE 10.md",
-    "AUTOMATICA/appunti/LEZIONE 03.md",
-    "AUTOMATICA/appunti/LEZIONE 09.md",
-    "AUTOMATICA/appunti/LEZIONE 08.md"
+    "AUTOMATICA/appunti/LEZIONE 03.md"
   ]
 }
