@@ -3,7 +3,5 @@
   "theme": "obsidian",
   "translucency": false,
   "cssTheme": "Things",
-  "enabledCssSnippets": [
-    "snippet"
-  ]
+  "enabledCssSnippets": []
 }
