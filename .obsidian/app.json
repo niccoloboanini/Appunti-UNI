@@ -164,6 +164,7 @@
     "Damping",
     "pASSI",
     " Laplac",
-    "Diagonalizzabile"
+    "Diagonalizzabile",
+    "Siso"
   ]
 }
