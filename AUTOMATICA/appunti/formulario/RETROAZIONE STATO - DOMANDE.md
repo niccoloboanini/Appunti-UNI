@@ -1,3 +1,6 @@
+## DOMANDE TIPICHE
+
+### RETROAZIONE SULLO STATO
 -  $\varphi_{c}(s)$ al variare di $\alpha$
 	- m.c.m. denominatori di $(sI-A)^{-1}B$ e valori di $\alpha$ che causano semplificazioni
 - $X_{r}$ per certi valori di $\alpha$
@@ -13,3 +16,4 @@
 	- $Y_{f}(s)=G^{*}_{y^\text{o}y}(s)\underbrace{Y^\text{o}(s)}_{\text{ingresso}}$ $\to$ se poli distinti $\Rightarrow$ $Y_{f}(s)=\underbrace{\frac{K_{i}}{s-p_{i}}}_{\text{transitorio}}+\underbrace{\frac{\tilde K_{i}}{s-p_{i}}}_{\text{permanente}}$ 
 		- Permanente: teorema risposta in frequenza
 		- Transitorio: teorema residui su $Y_{f}(s)$ e antitrasformata per avere nel tempo
+---
