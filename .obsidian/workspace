@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "AUTOMATICA/appunti/formulario/2.2 ES - RETROAZIONE USCITA.md",
+            "file": "AUTOMATICA/appunti/formulario/1.7 C. RETR. USCITA A.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AUTOMATICA/appunti/formulario/2.2 ES - RETROAZIONE USCITA.md",
+                "file": "AUTOMATICA/appunti/formulario/1.7 C. RETR. USCITA A.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,12 +106,12 @@
   },
   "active": "e368fbe67e259e70",
   "lastOpenFiles": [
+    "AUTOMATICA/appunti/formulario/1.7 C. RETR. USCITA A.md",
+    "AUTOMATICA/appunti/formulario/1.8 C. RETR. USCITA D.md",
     "AUTOMATICA/appunti/formulario/2.2 ES - RETROAZIONE USCITA.md",
     "AUTOMATICA/appunti/formulario/2.1 ES - RETROAZIONE STATO - DOMANDE.md",
     "AUTOMATICA/appunti/formulario/1.1 RISPOSTA + MODI.md",
     "AUTOMATICA/appunti/formulario/1.6 C. RETR. STATO.md",
-    "AUTOMATICA/appunti/formulario/1.7 C. RETR. USCITA A.md",
-    "AUTOMATICA/appunti/formulario/1.8 C. RETR. USCITA D.md",
     "AUTOMATICA/appunti/formulario/Untitled 1.md",
     "AUTOMATICA/appunti/formulario/1.5 SISTEMI TD.md",
     "AUTOMATICA/appunti/formulario/1.4 SISTEMI NON LINEARI.md",
