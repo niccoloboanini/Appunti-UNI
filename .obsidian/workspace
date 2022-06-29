@@ -9,9 +9,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "AUTOMATICA/appunti/formulario/2.4 ES - RETROAZIONE USCITA (progetto con controllore).md",
-            "mode": "source",
-            "source": false
+            "file": "AUTOMATICA/appunti/formulario/2.1 ES - RETROAZIONE STATO - DOMANDE.md",
+            "mode": "preview",
+            "source": true
           }
         }
       }
@@ -61,7 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 231.5
+    "width": 234.5078125
   },
   "right": {
     "id": "f84c341bdd731090",
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AUTOMATICA/appunti/formulario/2.4 ES - RETROAZIONE USCITA (progetto con controllore).md",
+                "file": "AUTOMATICA/appunti/formulario/2.1 ES - RETROAZIONE STATO - DOMANDE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,15 +106,15 @@
   },
   "active": "e368fbe67e259e70",
   "lastOpenFiles": [
-    "AUTOMATICA/appunti/formulario/2.4 ES - RETROAZIONE USCITA (progetto con controllore).md",
+    "AUTOMATICA/appunti/formulario/2.1 ES - RETROAZIONE STATO - DOMANDE.md",
     "AUTOMATICA/appunti/formulario/1.6 C. RETR. STATO.md",
+    "AUTOMATICA/appunti/formulario/1.5 SISTEMI TD.md",
+    "AUTOMATICA/appunti/formulario/es.md",
+    "AUTOMATICA/appunti/formulario/2.4 ES - RETROAZIONE USCITA (progetto con controllore).md",
+    "AUTOMATICA/appunti/formulario/2.3 ES - RETROAZIONE USCITA (schema).md",
+    "AUTOMATICA/appunti/formulario/2.2 ES - RETROAZIONE USCITA.md",
     "AUTOMATICA/appunti/formulario/1.7 C. RETR. USCITA A.md",
     "AUTOMATICA/appunti/formulario/1.8 C. RETR. USCITA D.md",
-    "AUTOMATICA/appunti/formulario/2.3 ES - RETROAZIONE USCITA (schema).md",
-    "AUTOMATICA/appunti/formulario/2.1 ES - RETROAZIONE STATO - DOMANDE.md",
-    "AUTOMATICA/appunti/formulario/2.2 ES - RETROAZIONE USCITA.md",
-    "AUTOMATICA/appunti/formulario/1.1 RISPOSTA + MODI.md",
-    "AUTOMATICA/appunti/formulario/Untitled 1.md",
-    "AUTOMATICA/appunti/formulario/1.5 SISTEMI TD.md"
+    "AUTOMATICA/appunti/formulario/1.1 RISPOSTA + MODI.md"
   ]
 }
