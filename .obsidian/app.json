@@ -166,6 +166,8 @@
     " Laplac",
     "Diagonalizzabile",
     "Siso",
-    "stabilizzabilita"
+    "stabilizzabilita",
+    "autov",
+    "asintotic"
   ]
 }
