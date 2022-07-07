@@ -6,3 +6,6 @@ Fondamenti di Automatica. Include:
 ## SEGNALI
 Fondamenti di Segnali e Trasmissione. Include:
 - Appunti seconda metà del Corso 2021-2022
+## RETI
+Fondamenti di Reti e Telecomunicazione. Include:
+- Appunti del Corso 2021-2022
