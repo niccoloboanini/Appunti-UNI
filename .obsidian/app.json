@@ -4,8 +4,8 @@
   "pdfExportSettings": {
     "pageSize": "A4",
     "landscape": false,
-    "margin": "2",
-    "downscalePercent": 61
+    "margin": "0",
+    "downscalePercent": 88
   },
   "communityPluginSortOrder": "release",
   "alwaysUpdateLinks": true,
@@ -172,7 +172,24 @@
     "multicast",
     "Broadcast",
     "punto-punto",
-    "broadcast"
+    "broadcast",
+    "switching",
+    "Set-up",
+    "Usage",
+    "reset",
+    "Setup ",
+    "sage ",
+    "eset)",
+    "etup",
+    "setup",
+    "usage",
+    "setup",
+    "store-and-forward",
+    "connection",
+    "oriented",
+    "Public",
+    "Switched",
+    "Telephone"
   ],
   "communityThemeSortOrder": "download"
 }

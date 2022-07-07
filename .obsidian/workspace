@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "RETI/Untitled.md",
+            "file": "RETI/2. RETE TELEFONICA (PUBBLICA).md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "RETI/Untitled.md",
+                "file": "RETI/2. RETE TELEFONICA (PUBBLICA).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,8 @@
   },
   "active": "e368fbe67e259e70",
   "lastOpenFiles": [
-    "RETI/Untitled.md",
+    "RETI/2. RETE TELEFONICA (PUBBLICA).md",
+    "RETI/1. INTRODUZIONE.md",
     "AUTOMATICA/appunti/LEZIONE 11.md",
     "Untitled Diagram.svg",
     "AUTOMATICA/appunti/formulario/1.1 RISPOSTA + MODI 1.md",
@@ -114,7 +115,6 @@
     "AUTOMATICA/appunti/formulario/Untitled.md",
     "AUTOMATICA/appunti/formulario/2.1 ES - RETROAZIONE STATO - DOMANDE.md",
     "AUTOMATICA/appunti/formulario/2.4 ES - RETROAZIONE USCITA (progetto con controllore).md",
-    "AUTOMATICA/appunti/formulario/2.3 ES - RETROAZIONE USCITA (schema).md",
-    "AUTOMATICA/appunti/formulario/2.2 ES - RETROAZIONE USCITA.md"
+    "AUTOMATICA/appunti/formulario/2.3 ES - RETROAZIONE USCITA (schema).md"
   ]
 }
