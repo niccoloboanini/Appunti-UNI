@@ -3,5 +3,7 @@
   "theme": "obsidian",
   "translucency": false,
   "cssTheme": "Things",
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [
+    "myCSSimages"
+  ]
 }
