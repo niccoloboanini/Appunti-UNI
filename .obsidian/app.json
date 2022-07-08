@@ -190,7 +190,15 @@
     "Public",
     "Switched",
     "Telephone",
-    "Nyquist"
+    "Nyquist",
+    "bit-rate",
+    "multiplexing",
+    "Multiplexing",
+    "sottocanali",
+    "sottobande",
+    "sottocanale",
+    "sottobanda",
+    "bassabanda"
   ],
   "communityThemeSortOrder": "download"
 }
