@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "e368fbe67e259e70",
+        "id": "dca52533b8d7a746",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "MALTA.md",
+            "file": "RETI/2. RETE TELEFONICA (PUBBLICA).md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MALTA.md",
+                "file": "RETI/2. RETE TELEFONICA (PUBBLICA).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,17 +104,17 @@
     "width": 279.1041564941406,
     "collapsed": true
   },
-  "active": "e368fbe67e259e70",
+  "active": "dca52533b8d7a746",
   "lastOpenFiles": [
-    "MALTA.md",
     "RETI/2. RETE TELEFONICA (PUBBLICA).md",
+    "MALTA.md",
+    "MALTA.md",
     "RETI/1. INTRODUZIONE.md",
     "AUTOMATICA/appunti/LEZIONE 11.md",
     "Untitled Diagram.svg",
     "AUTOMATICA/appunti/formulario/1.1 RISPOSTA + MODI 1.md",
     "README.md",
     "AUTOMATICA/appunti/formulario/Untitled.md",
-    "AUTOMATICA/appunti/formulario/2.1 ES - RETROAZIONE STATO - DOMANDE.md",
-    "AUTOMATICA/appunti/formulario/2.4 ES - RETROAZIONE USCITA (progetto con controllore).md"
+    "AUTOMATICA/appunti/formulario/2.1 ES - RETROAZIONE STATO - DOMANDE.md"
   ]
 }

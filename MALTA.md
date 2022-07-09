@@ -1,10 +1,12 @@
-- 6 notti
-- Check-in 15:00 $\div$ 00:00
- 
-![[Pasted image 20220708200916.png|300]]
-- 316€ a testa in totale
+![[Pasted image 20220709174249.png|400]]
 
-![[Pasted image 20220708200113.png|400]]
+### DATE
+Check-in:   dom 07 ago
+Check-out: sab 13 ago
 
-- circa 20 minuti a piedi
+### PAGAMENTO
+![[Pasted image 20220709174447.png|400]]
+
+### IBAN
+IT58Z36772223000EM000925633
 
