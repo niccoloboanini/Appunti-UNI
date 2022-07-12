@@ -4,8 +4,8 @@
   "pdfExportSettings": {
     "pageSize": "A4",
     "landscape": false,
-    "margin": "0",
-    "downscalePercent": 88
+    "margin": "2",
+    "downscalePercent": 74
   },
   "communityPluginSortOrder": "release",
   "alwaysUpdateLinks": true,
