@@ -93,3 +93,63 @@ Esempio:
 ![[Pasted image 20220712201147.png|400]]
 - La prima uscita del primo blocco del primo stadio è occupata, quindi il collegamento con il primo blocco del secondo stadio è indisponibile
 
+Per le linee di uscita del secondo stadio il discorso è analogo: *la probabilità di avere una linea di uscita del secondo stadio da occupata da un certo ingresso è $p=a$*:
+$$
+p=\frac{n \cdot a}{k} \stackrel{n=k}{=} \frac{k \cdot a}{k}=a
+$$
+![[Pasted image 20220712213920.png|250]]
+- stessa probabilità in formule anche per il passaggio dal secondo al terzo stadio
+
+Allora, la probabilità di avere un **percorso libero** da un blocco del primo stadio verso un determinato blocco del terzo stadio sarà data dalla probabilità che *entrambi* le componenti del cammino (collegamenti 1° $\to$ 2° stadio e 2° $\to$ 3° stadio) siano liberi
+Pertanto, dato che:
+$$
+\begin{gather}
+p &=& \text{prob. collegamento occupato} \\
+1-p&=& \text{prob collegamento libero}
+\end{gather}
+$$
+Allora: 
+$$
+\begin{gather}
+\text{prob}\{\text{cammino libero}\} &=& (1-p)^{2} \\
+\text{prob}\{\text{cammino occupato}\} &=& 1-(1-p)^{2}
+\end{gather}
+$$
+Dato che i cammini da un certo ingresso verso una determinata uscita sono in tutto $k$, si può estendere la formula trovando la probabilità di blocco della rete, ovvero la probabilità in cui risulta non possibile il collegamento tra un elemento del primo blocco con un elemento del terzo blocco:
+$$
+\large \boxed{\text{prob}\{ \text{blocco} \} = P_{B}= [1-(1-p)^{2}]^{k}}
+$$
+- in questo caso nessuno dei $k$ percorsi completi ingresso uscita è disponibile, quindi la struttura è bloccante
+
+Abbiamo ottenuto la **formula di Lee**
+
+😃: $P_{B}$ e $k$ sono indipendenti l'uno dall'altro quindi a seconda dei casi ci possiamo adeguare:
+- se ci viene dato $P_{B}$ e tutte le ipotesi aggiuntive si può definire/ricavare $k$ (numero linee uscita blocchi primo stadio) in modo tale che il vincolo su $P_{B}$ sia rispettato
+- se ci viene dato $k$ in relazione a un fattore di costo che vogliamo avere, si può verificare $P_{B}$ per capire come si comporta la relazione con tale costo (cioè se ha o meno una alta probabilità di blocco)
+
+Facciamo un esempio:
+- $n=120$
+- $k=128$
+- $a=128$
+
+Allora:
+$$
+\text{CLOS: }k= 2n-1=2 \cdot 120 -1 =239
+$$
+Con probabilità di blocco:
+$$
+P_{B}=[1-(1-p)^{2}]^{k}=\left[1-\left(1- \frac{a \cdot n}{k}\right)\right]^{k}=10^{-7}
+$$
+(controlla i conti, anche il due all'esponente che a lezione non l'ha messo)
+- Probabilità molto bassa
+- Anche il costo è molto ridotto rispetto a quello di Clos, e ci siamo arrivati semplicemente "sacrificando" una piccola probabilità di bloccaggio (verifica quanto valgono i costi effettivamente)
+
+> [!note] L'analisi di Lee non è una analisi esatta
+> è cioè una analisi approssimata
+> Verifichiamo: abbiamo ottenuto un valore certo di $P_{B}$, ovvero $10^{-7}$.
+> Da Clos sappiamo che la probabilità di blocco nel caso in cui $k=2^{n}-1$ è $0$ per definizione. Se sostituiamo il valore di $k$ di Clos nella formula di Lee non troviamo tuttavia questo valore.
+> Si verifica appunto sostituendo in quest'ultimo esempio $239$ nella formula finale
+
+>La tecnologia attuale che porta ad avere reti sempre più veloci e impegnativi, di conseguenza anche i commutatori si sono evoluti. Le tecniche nuove si sono evolute nelle fast-packet-switching, con probabilità sempre più basse di bloccaggio
+
+
