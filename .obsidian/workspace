@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "RETI/3. COMMUTATORI.md",
+            "file": "RETI/4. RETI PER TRASMISSIONE DATI.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "RETI/3. COMMUTATORI.md",
+                "file": "RETI/4. RETI PER TRASMISSIONE DATI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,8 +105,8 @@
   },
   "active": "dca52533b8d7a746",
   "lastOpenFiles": [
-    "RETI/Untitled.md",
     "RETI/3. COMMUTATORI.md",
+    "RETI/4. RETI PER TRASMISSIONE DATI.md",
     "RETI/2. RETE TELEFONICA (PUBBLICA).md",
     "MALTA.md",
     "MALTA.md",
