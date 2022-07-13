@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "RETI/4. RETI PER TRASMISSIONE DATI.md",
+            "file": "RETI/4.1 TRAFFICO DATI - TCP-IP.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "RETI/4. RETI PER TRASMISSIONE DATI.md",
+                "file": "RETI/4.1 TRAFFICO DATI - TCP-IP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,15 +105,15 @@
   },
   "active": "dca52533b8d7a746",
   "lastOpenFiles": [
+    "RETI/4.0 TRAFFICO DATI - ISO-OSI & Co..md",
+    "RETI/4.1 TRAFFICO DATI - TCP-IP.md",
     "Untitled Diagram.svg",
-    "RETI/4. RETI PER TRASMISSIONE DATI.md",
     "RETI/3. COMMUTATORI.md",
     "RETI/2. RETE TELEFONICA (PUBBLICA).md",
     "MALTA.md",
     "MALTA.md",
     "RETI/1. INTRODUZIONE.md",
     "AUTOMATICA/appunti/LEZIONE 11.md",
-    "AUTOMATICA/appunti/formulario/1.1 RISPOSTA + MODI 1.md",
-    "README.md"
+    "AUTOMATICA/appunti/formulario/1.1 RISPOSTA + MODI 1.md"
   ]
 }
