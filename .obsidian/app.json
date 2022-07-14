@@ -264,7 +264,15 @@
     "address",
     "Option",
     "payload",
-    "option"
+    "option",
+    "Ethernet",
+    "end-user",
+    "subnetting",
+    "Address",
+    "Translation",
+    "Indrizzi",
+    "sottoindirizzi",
+    "sottorete"
   ],
   "communityThemeSortOrder": "download"
 }
