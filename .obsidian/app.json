@@ -317,7 +317,9 @@
     "logical",
     "less",
     "less",
-    "ethernet"
+    "ethernet",
+    "polling",
+    "Polling"
   ],
   "communityThemeSortOrder": "download"
 }
