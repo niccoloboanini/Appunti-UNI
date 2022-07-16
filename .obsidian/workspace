@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "dca52533b8d7a746",
+        "id": "37798646942b4d0a",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -96,24 +96,25 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 279.1041564941406,
+    "width": 171.833251953125,
     "collapsed": true
   },
-  "active": "dca52533b8d7a746",
+  "active": "37798646942b4d0a",
   "lastOpenFiles": [
-    "RETI/Pasted image 20220716175329.png.md",
-    "RETI/5. RETI LOCALI (LAN).md",
     "RETI/4.2 LIVELLO TRASPORTO.md",
-    "RETI/immagini/Pasted image 20220707155305.png",
-    "RETI/immagini/Pasted image 20220716164835.png",
-    "RETI/immagini/Pasted image 20220716164242.png",
-    "RETI/1..md",
-    "RETI/iupfrgiuyhtruihg.md",
+    "RETI/4.1 TRAFFICO DATI - TCP-IP.md",
+    "RETI/4.0 TRAFFICO DATI - ISO-OSI & Co..md",
+    "RETI/3. COMMUTATORI.md",
+    "RETI/2. RETE TELEFONICA (PUBBLICA).md",
     "RETI/1. INTRODUZIONE.md",
-    "RETI/4.1 TRAFFICO DATI - TCP-IP.md"
+    "README.md",
+    "RETI/5. RETI LOCALI (LAN).md",
+    "RETI/Pasted image 20220716175329.png.md",
+    "RETI/immagini/Pasted image 20220707155305.png"
   ]
 }
