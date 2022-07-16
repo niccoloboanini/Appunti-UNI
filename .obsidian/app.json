@@ -312,7 +312,12 @@
     "full-duplex",
     "handshake",
     "re-invio",
-    "Flags"
+    "Flags",
+    "Connection",
+    "logical",
+    "less",
+    "less",
+    "ethernet"
   ],
   "communityThemeSortOrder": "download"
 }
