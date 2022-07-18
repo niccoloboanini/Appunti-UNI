@@ -319,7 +319,9 @@
     "less",
     "ethernet",
     "polling",
-    "Polling"
+    "Polling",
+    "Gated",
+    "riaccumula"
   ],
   "communityThemeSortOrder": "download"
 }
