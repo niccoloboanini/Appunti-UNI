@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "RETI/7. RETI DI SENSORI.md",
+            "file": "RETI/8. IoT.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "RETI/7. RETI DI SENSORI.md",
+                "file": "RETI/8. IoT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,10 +104,10 @@
     "width": 171.833251953125,
     "collapsed": true
   },
-  "active": "7213e05fcfed28f4",
+  "active": "37798646942b4d0a",
   "lastOpenFiles": [
-    "RETI/6. RETI WIRELESS.md",
     "RETI/7. RETI DI SENSORI.md",
+    "RETI/6. RETI WIRELESS.md",
     "RETI/immagini/Pasted image 20220719010848.png",
     "RETI/immagini/Pasted image 20220719010721.png",
     "RETI/immagini/Pasted image 20220718201945.png",
