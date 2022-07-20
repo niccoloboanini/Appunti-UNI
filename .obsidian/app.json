@@ -408,7 +408,12 @@
     "Application",
     "infrastructure",
     "controller",
-    "pacch\n"
+    "pacch\n",
+    "wildcard",
+    "link-state",
+    "virtual",
+    "machine",
+    "offrir"
   ],
   "communityThemeSortOrder": "download"
 }
