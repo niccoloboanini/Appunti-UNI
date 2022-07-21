@@ -1,4 +1,4 @@
-# Appunti-UNI
+# Appunti-UNI - INGEGNERIA INFORMATICA
 
 ## AUTOMATICA
 Fondamenti di Automatica. Include:
