@@ -7,8 +7,12 @@
         "id": "02551437ec62b9d6",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "LASD/LAB ALGORITMI.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -73,6 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "LASD/LAB ALGORITMI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,6 +106,7 @@
   },
   "active": "02551437ec62b9d6",
   "lastOpenFiles": [
+    "LASD.md",
     "SEGNALI/pdf/0. MERGE.pdf",
     "SEGNALI/appunti/4. 12 e 16 maggio.md",
     "SEGNALI/appunti/7. 26 maggio.md",
@@ -109,7 +115,6 @@
     "RETI/09. ALGORITMI DI ROUTING.md",
     "RETI/08. IoT.md",
     "RETI/07. RETI DI SENSORI.md",
-    "RETI/06. RETI WIRELESS.md",
-    "RETI/05.1 DISPOSITIVI RETE.md"
+    "RETI/06. RETI WIRELESS.md"
   ]
 }
