@@ -107,14 +107,14 @@
   "active": "3abb3581a2376601",
   "lastOpenFiles": [
     "RETI/10. SDN.md",
-    "RETI/08. IoT.md",
     "RETI/09. ALGORITMI DI ROUTING.md",
-    "RETI/pdf/8. IoT.pdf",
-    "RETI/11. CONGESTIONE E SICUREZZA.md",
+    "RETI/08. IoT.md",
     "RETI/07. RETI DI SENSORI.md",
     "RETI/06. RETI WIRELESS.md",
-    "RETI/immagini/Pasted image 20220719010848.png",
-    "RETI/immagini/Pasted image 20220719010721.png",
-    "RETI/immagini/Pasted image 20220718201945.png"
+    "RETI/05.1 DISPOSITIVI RETE.md",
+    "RETI/05. RETI LOCALI (LAN).md",
+    "RETI/04.2 LIVELLO TRASPORTO.md",
+    "RETI/04.1 TRAFFICO DATI - TCP-IP.md",
+    "RETI/04.0 TRAFFICO DATI - ISO-OSI & Co..md"
   ]
 }
